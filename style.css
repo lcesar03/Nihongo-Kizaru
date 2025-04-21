@@ -6,8 +6,26 @@
     border-bottom: 3px solid;
     border-top: 3px solid;
     margin: none;
-    width: 110%;
-    margin-left: -10px;
+    width: 101.2%;
+    margin-left: -8px;
+    margin-top: -8px;
+}
+
+.header .container .agora{
+   color:#8a0101;
+   list-style: none;
+   text-decoration: none;
+   margin-top: 100px;
+   margin-right: -300px;
+   margin-left: 215px;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.header .container .cerejeira{
+    margin-left: -32%;
+    margin-right: 8%;
+    transform: rotateY(180deg);
 }
 
 .header .container .icon{
@@ -25,9 +43,10 @@
 
 .login .banner{
     height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-image: url('')
+    width: 101.35%;
+    margin-left: -10px;
+    background-size: contain;
+    background-image: url('imagens/wallpaper.japones.jpg')
 }
 
 .login .banner .container{
@@ -37,23 +56,62 @@
 
 .card-cadastro{
     background-color:#dcdcdc;
-    line-height: 50px;
-    width: 40%;
+    line-height: 60px;
+    width: 50%;
     border-radius: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.88;
 }
 
 .card-cadastro h2{
-    font-size: bold;
-    font-family:arial;
+    font-weight: bolder;
+    font-family:'Times New Roman';
     display: flex;
     justify-content: center;
     color:#cc0404;
+    font-size: 32px;
 }
 
 .card-cadastro .campo{
-    display: flex;
-    justify-content: center;
     color:#cc0404;
     font-family: arial;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.card-cadastro .campo span{
+    display: flex;
+    justify-content: start;
+    margin-left: 50px;
+    font-size: 14px;
+}
+
+.card-cadastro .campo input{
+    display: flex;
+    justify-content: center;
+    border: 2px solid;
+    border-color: #cc0404;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 70px;
+    width: 78%;
+    margin-top: -10px;
+    
+}
+
+.card-cadastro button{
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: #8a0101;
+    background-color: #cc0404;
+    justify-self: center;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
