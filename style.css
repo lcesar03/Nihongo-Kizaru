@@ -11,14 +11,21 @@
     margin-top: -8px;
 }
 
+a{
+color:#8a0101;
+text-decoration: none;
+}
+
+a:hover{
+    color:#eeea1b;
+}
+
 .header .container .agora{
-   color:#8a0101;
    list-style: none;
-   text-decoration: none;
    margin-top: 100px;
    margin-right: -300px;
-   margin-left: 215px;
-   font-size: 18px;
+   margin-left: 207px;
+   font-size: 20px;
    font-weight: bold;
 }
 
@@ -114,4 +121,10 @@
     margin-top: -10px;
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+.card-cadastro button:hover{
+    color:#ffffff;
+    background-color: #eeea1b;
+    border-color:#bebc14;
 }
