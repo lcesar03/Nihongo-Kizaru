@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <img class="cerejeira" src="imagens/cerejeira.svg" alt="cerejeira">
+            <img class="logo" src="imagens/logo.PNG.svg" alt="logo">
+            <img class="icon" src="imagens/Kizaru.PNG.png" alt="macaco">
+        
+            <li class="cadastro">
+                <a href="#">Cadastro</a>
+            </li>
+            <li class="barra">|</li>
+            <li class="login">
+                <a href="login.html">Login</a>
+            </li>
+        </div>
+    </div>
+
+    <div class="divcadastro">
+        <div class="banner">
+            <div class="container">
+                <div class="card-cadastro">
+                    <h2>Bem-vindo!(ようこそ!)</h2>
+                    <div class="formulario">
+                        <div class="campo">
+                            <span>Nome(名前):</span>
+                            <input id="nome_input" type="text" placeholder="Seu nome" />
+                        </div>
+                        <div class="campo">
+                            <span>E-mail(メールアドレス):</span>
+                            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+                        </div>
+                        <div class="campo">
+                            <span>Telefone(電話番号):</span>
+                            <input id="telefone_input" type="text" placeholder="(11)99888-7766" />
+                        </div>
+                        <div class="campo">
+                            <span>Senha(パスワード):</span>
+                            <input id="senha_input" type="password" placeholder="******" />
+                        </div>
+                        <div class="campo">
+                            <span>Confirmação da Senha(パスワードの確認):</span>
+                            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+                        </div>
+                        <button onclick="cadastrar()" class="botao">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <h3>@2025, Luiz César de Camillo</h3>
+        </div>
+    </div>
+
+</body>
+</html>
