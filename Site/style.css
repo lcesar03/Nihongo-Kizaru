@@ -57,7 +57,7 @@ a:hover{
 }
 
 .header .container .cerejeira-login{
-    margin-left: -363px;
+    margin-left: -347px;
     margin-right: 220px;
     margin-top: -40px;
     transform: rotateY(180deg);
@@ -178,8 +178,8 @@ a:hover{
     line-height: 100px;
     width: 45%;
     border-radius: 10px;
-    margin-top: 78px;
-    margin-bottom: 78px;
+    margin-top: 75px;
+    margin-bottom: 75px;
     opacity: 0.88;
 }
 
@@ -251,17 +251,16 @@ a:hover{
 }
 
 .footer-login{
-    display: flex;
     background-color: #cc0404;
-    justify-content: center;
     width: 101.35%;
-    line-height: 25%;
     margin-left: -10px;
     font-size: 12px;
-    padding-bottom: 9px;
+    margin-bottom: -10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .footer-login h3{
-    margin-top: 17px;
-    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
 }
