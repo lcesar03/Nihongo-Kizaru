@@ -40,7 +40,7 @@
                         <span>Senha(パスワード):</span>
                         <input id="senha_input" type="password" placeholder="******" />
                     </div>
-                    <button onclick="entrar()" class="botao">Entrar</button>                    
+                    <button  onclick="entrar()" class="botao">Entrar</button>                    
                 </div>
             </div>
         </div>
@@ -54,3 +54,21 @@
     
 </body>
 </html>
+
+<script>
+
+    function entrar(){
+        var email = email_input.value
+        var senha = senha_input.value
+
+        if(email == 'teste@gmail.com' && senha == 'Palmeiras!'){
+            alert('Login efetuado com sucesso!')
+            window.location.href="minigames.html"
+
+        } else{
+            alert('Email e/ou senha inválidas!')
+        }
+
+    }
+
+</script>
