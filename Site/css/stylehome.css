@@ -1,0 +1,111 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #880000;
+}
+
+@font-face {
+    font-family: midorima;
+    src: url('../fontes/Midorima.ttf');
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    background-color: #cc0404;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    height: 100px;
+    width: 100%;
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+.container3 {
+    height: 100px;
+    width: 210px;
+}
+
+.daruma {
+    width: 100px;
+    height: 100px;
+}
+
+.container4 {
+    height: 100px;
+    width: 210px;
+}
+
+.container4 span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: midorima;
+    font-size: 36px;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+.container5 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 300px;
+    height: 80px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+.higanbana {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: #410101;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eeea1b;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cadastro {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}

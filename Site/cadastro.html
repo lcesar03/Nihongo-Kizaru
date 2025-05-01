@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/stylecadastro.css">
 </head>
+
 <body>
 
     <div class="header">
-        <div class="container">
-            <img class="cerejeira" src="imagens/cerejeira.svg" alt="cerejeira">
-            <img class="logo" src="imagens/logo.PNG.svg" alt="logo">
-            <img class="icon" src="imagens/Kizaru.PNG.png" alt="macaco">
-        
-            <li class="cadastro">
-                <a href="#">Cadastro</a>
-            </li>
-            <li class="barra">|</li>
-            <li class="login">
-                <a href="login.html">Login</a>
-            </li>
-            <li class="home">
-                <a href="home.html">Home</a>
-            </li>
+        <div class="container1">
+            <div class="container2">
+                <div class="container3">
+                    <img class="daruma" src="imagens/daruma.svg" alt="daruma">
+                    <img class="higanbana" src="imagens/flor.svg" alt="flor">
+                </div>
+                <div class="container4">
+                    <span>NIHONGO KIZARU
+                        <img class="icon" src="imagens/Kizaru.PNG.png" alt="macaco">
+                    </span>
+                </div>
+                <div class="container5">
+                    <li class="home">
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li class="barra">|</li>
+                    <li class="login">
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li class="cadastro">
+                        <a href="#">Cadastro</a>
+                    </li>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="divcadastro">
         <div class="banner">
-            <div class="container">
+            <div class="box1">
                 <div class="card-cadastro">
-                    <h2>Bem-vindo!(ようこそ!)</h2>                    
+                    <h2>Bem-vindo!(ようこそ!)</h2>
                     <div class="campo">
                         <span>Nome(名前):</span>
                         <input id="nome_input" type="text" placeholder="Luiz César de Camillo"/>
@@ -50,60 +61,63 @@
                     </div>
                     <div class="campo">
                         <span>Confirmação da Senha(パスワードの確認):</span>
-                        <input id="confirmacao_senha_input" type="password" placeholder="******" />
+                        <input id="confirmacao_senha_input" type="password" placeholder="******"/>
                     </div>
-                    <button onclick="cadastrar()" class="botao">Cadastrar</button>                    
+                    <div class="box2">
+                        <button onclick="cadastrar()" class="botao">Cadastrar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <div class="container">
+        <div class="box3">
             <h3>@2025, Luiz César de Camillo</h3>
         </div>
     </div>
 
 </body>
+
 </html>
 
 <script>
-    
-    function cadastrar(){
+
+    function cadastrar() {
         var nome = nome_input.value
         var email = email_input.value
         var telefone = telefone_input.value
         var senha = senha_input.value
         var confirmacao_senha = confirmacao_senha_input.value
 
-        if(nome.length < 3){
+        if (nome.length < 3) {
             alert(`Nome inválido! Deve ter no mínimo 3 caracteres`)
 
-        }else if((email.includes('@') && email.includes('.')) == false){
+        } else if ((email.includes('@') && email.includes('.')) == false) {
             alert(`Email inválido! Deve conter '@' e '.'`)
-        
-        }else if(telefone.length < 11){
+
+        } else if (telefone.length < 11) {
             alert(`Telefone inválido! Deve ter 11 dígitos sem ( ) ou -`)
 
-        }else if(senha.length < 8){
+        } else if (senha.length < 8) {
             alert(`Senha inválida! Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial`)
 
-        }else if(
+        } else if (
             (senha.includes('A') || senha.includes('B') || senha.includes('C') || senha.includes('D') || senha.includes('E') || senha.includes('F') || senha.includes('G') || senha.includes('H') || senha.includes('I') || senha.includes('J') || senha.includes('K') || senha.includes('L') || senha.includes('M') || senha.includes('N') || senha.includes('O') || senha.includes('P') || senha.includes('Q') || senha.includes('R') || senha.includes('S') || senha.includes('T') || senha.includes('U') || senha.includes('V') || senha.includes('W') || senha.includes('X') || senha.includes('Y') || senha.includes('Z')) == false
-        ){
+        ) {
             alert(`Senha inválida! Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial`)
 
-        } else if(
-            (senha.includes('.') || senha.includes('-') || senha.includes('_') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('*') || senha.includes('!') || senha.includes('?') || senha.includes(',')|| senha.includes(';') || senha.includes(':')) == false
-        ){
+        } else if (
+            (senha.includes('.') || senha.includes('-') || senha.includes('_') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('*') || senha.includes('!') || senha.includes('?') || senha.includes(',') || senha.includes(';') || senha.includes(':')) == false
+        ) {
             alert(`Senha inválida! Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial`)
 
-        } else if(confirmacao_senha != senha){
+        } else if (confirmacao_senha != senha) {
             alert('As senhas devem ser iguais!')
 
-        } else{
+        } else {
             alert('Cadastro efetuado com sucesso!')
-            window.location.href="login.html"
+            window.location.href = "login.html"
 
         }
     }

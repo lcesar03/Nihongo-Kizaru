@@ -1,0 +1,214 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #880000;
+}
+
+@font-face {
+    font-family: midorima;
+    src: url('../fontes/Midorima.ttf');
+}
+
+@font-face {
+    font-family: minamoto;
+    src: url('../fontes/Minamoto.ttf');
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    background-color: #cc0404;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    height: 100px;
+    width: 100%;
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+.container3 {
+    height: 100px;
+    width: 210px;
+}
+
+.daruma {
+    width: 100px;
+    height: 100px;
+}
+
+.container4 {
+    height: 100px;
+    width: 210px;
+}
+
+.container4 span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: midorima;
+    font-size: 36px;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+.container5 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 300px;
+    height: 80px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+.higanbana {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: #410101;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eeea1b;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cadastro {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.divcadastro {
+    display: flex;
+    justify-content: center;
+    height: 570px;
+}
+
+.banner {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-image: url('../imagens/wallpaper.japones.jpg')
+}
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.card-cadastro {
+    background-color: #dcdcdc;
+    opacity: 0.9;
+    width: 650px;
+    height: 550px;
+    border-radius: 10px;
+    font-family: minamoto;
+}
+
+.card-cadastro h2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    color:#cc0404;
+    font-size: 28px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.campo span {
+    padding-bottom: 10px;
+    color:#880000;
+    font-size: 14px;
+}
+
+.mensagem {
+    width: 100%;
+    line-height: 200%;
+    color:#cc0404;
+    font-size: 12px;;
+}
+
+.campo input {
+    width: 94%;
+    line-height: 170%;
+    text-align: center;
+    border-color:#880000;
+    border-radius: 10px;
+}
+
+.box2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.box2 button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid;
+    background-color:#880000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.box2 button:hover{
+    color:#ffffff;
+    background-color: #ffd900cb;
+    border: 2px solid;
+}
+
+.footer{
+    display: flex;
+    background-color: #cc0404;
+    justify-content: center;
+    width: 100%;
+    line-height: 1px;
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10px;
+}

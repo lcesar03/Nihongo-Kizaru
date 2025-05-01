@@ -1,0 +1,202 @@
+body {
+   width: 100%;
+   height: 100%;
+   padding: 0px;
+   margin: 0px;
+   background-color: #880000;
+}
+
+@font-face {
+   font-family: nosutaru;
+   src: url('../fontes/Nosutaru.ttf');
+}
+
+@font-face {
+   font-family: midorima;
+   src: url('../fontes/Midorima.ttf');
+}
+
+.header {
+   display: flex;
+   justify-content: center;
+}
+
+.container1 {
+   background-color: #cc0404;
+   border-bottom: 3px solid;
+   border-top: 3px solid;
+   height: 100px;
+   width: 100%;
+}
+
+.container2 {
+   display: flex;
+   justify-content: space-between;
+   height: 100px;
+   width: 100%;
+}
+
+.container3 {
+   height: 100px;
+   width: 210px;
+}
+
+.daruma {
+   width: 100px;
+   height: 100px;
+}
+
+.container4 {
+   height: 100px;
+   width: 210px;
+}
+
+.container4 span {
+   display: flex;
+   align-items: center;
+   text-align: center;
+   font-family: midorima;
+   font-size: 36px;
+   width: 100px;
+   height: 100px;
+   margin-left: 80px;
+}
+
+.container5 {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-end;
+   width: 400px;
+   height: 80px;
+}
+
+.icon {
+   width: 100px;
+   height: 100px;
+}
+
+.higanbana {
+   width: 100px;
+   height: 100px;
+}
+
+a {
+   color: #410101;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #eeea1b;
+}
+
+.barra {
+   display: flex;
+   justify-content: center;
+   list-style: none;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.minigames {
+   list-style: none;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.quiz {
+   list-style: none;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.dashboard {
+   list-style: none;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.conteudo {
+   list-style: none;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.logout {
+   width: 50px;
+   height: 50px;
+   cursor: pointer;
+}
+
+.title {
+   display: flex;
+   justify-content: center;
+   padding-top: 5px;
+}
+
+.box1 {
+   background-color: black;
+   width: 90%;
+   border: 4px solid;
+   border-radius: 5px;
+}
+
+.box2 {
+   display: flex;
+   justify-content: center;
+}
+
+.box3 { 
+   background-color:#ffd900cb;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+}
+
+.box3 .iene {
+   width: 100px;
+   height: 100px;
+}
+
+.box4 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ffd900cb;
+   width: 200px;
+   line-height: 50px;
+   border: 4px solid;
+   border-color: white;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   margin-top: 5px;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+.box5 h1 {
+   color: white;
+   font-family: nosutaru;
+   font-size: 50px;
+   margin: 0px;
+   padding-left: 12px;
+}
+
+.box6 {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
+.box6 h3{
+   color: white;
+   background-color: white;
+   line-height: 400px;
+   width: 8px;
+   font-size: 50px;
+   margin-top: 30px;
+   padding-bottom: 5px;
+}
+
+.box7 {
+
+}
