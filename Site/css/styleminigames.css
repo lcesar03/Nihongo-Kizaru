@@ -4,6 +4,8 @@ body {
    padding: 0px;
    margin: 0px;
    background-color: #880000;
+   background-image: url('../imagens/pixel.gif');
+   background-size: contain;
 }
 
 @font-face {
@@ -16,9 +18,9 @@ body {
    src: url('../fontes/Midorima.ttf');
 }
 
-.header {
-   display: flex;
-   justify-content: center;
+@font-face {
+   font-family: yoppafude;
+   src: url('../fontes/Yoppa-fude.ttf');
 }
 
 .container1 {
@@ -27,6 +29,7 @@ body {
    border-top: 3px solid;
    height: 100px;
    width: 100%;
+   opacity: 0.9;
 }
 
 .container2 {
@@ -46,12 +49,7 @@ body {
    height: 100px;
 }
 
-.container4 {
-   height: 100px;
-   width: 210px;
-}
-
-.container4 span {
+.container3 span {
    display: flex;
    align-items: center;
    text-align: center;
@@ -73,6 +71,7 @@ body {
 .icon {
    width: 100px;
    height: 100px;
+   margin-left: 10px;
 }
 
 .higanbana {
@@ -97,25 +96,7 @@ a:hover {
    font-weight: bold;
 }
 
-.minigames {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.quiz {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.dashboard {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.conteudo {
+.aba {
    list-style: none;
    font-size: 18px;
    font-weight: bold;
@@ -135,6 +116,7 @@ a:hover {
 
 .box1 {
    background-color: black;
+   opacity: 0.9;
    width: 90%;
    border: 4px solid;
    border-radius: 5px;
@@ -143,10 +125,25 @@ a:hover {
 .box2 {
    display: flex;
    justify-content: center;
+   width: 100%;
 }
 
-.box3 { 
-   background-color:#ffd900cb;
+.box2 h3 {
+   font-size: 28px;
+}
+
+#input_max {
+   width: 20%;
+   line-height: 20%;
+   text-align: center;
+   border-radius: 5px;
+   margin-right: 10px;
+   font-family: nosutaru;
+   font-weight: bold;
+}
+
+.box3 {
+   background-color: #ffd900cb;
    border-radius: 50%;
    width: 100px;
    height: 100px;
@@ -167,7 +164,6 @@ a:hover {
    border: 4px solid;
    border-color: white;
    border-radius: 5px;
-   margin-bottom: 10px;
    margin-top: 5px;
    margin-left: 10px;
    margin-right: 10px;
@@ -184,19 +180,292 @@ a:hover {
 .box6 {
    display: flex;
    justify-content: space-between;
-   margin-bottom: 10px;
+   margin-bottom: 5px;
+   border-bottom: 3px solid;
+   border-color: white;
+   padding-bottom: 5px;
 }
 
-.box6 h3{
+.box6 span {
    color: white;
    background-color: white;
    line-height: 400px;
    width: 8px;
    font-size: 50px;
-   margin-top: 30px;
-   padding-bottom: 5px;
+   margin-top: 20px;
+   margin-left: 15px;
+   margin-right: 15px;
 }
 
 .box7 {
+   color: #880000;
+   font-family: nosutaru;
+   width: 100%;
+   margin-right: 15px;
+   margin-left: 15px;
+}
 
+.box7 h3 {
+   text-align: center;
+   font-size: 30px;
+}
+
+.box7 .p1 {
+   color: white;
+   text-indent: 30px;
+   text-align: justify;
+   line-height: 20px;
+   font-size: 14px;
+   width: 100%;
+   margin-top: 10px;
+   margin-bottom: 0px;
+}
+
+.box7 .p2 {
+   color: white;
+   text-align: justify;
+   line-height: 20px;
+   font-size: 14px;
+   width: 100%;
+   margin-top: 10px;
+   margin-bottom: 0px;
+   margin-left: 15px;
+}
+
+.box7 .p3 {
+   color: white;
+   text-align: justify;
+   line-height: 20px;
+   font-size: 14px;
+   width: 100%;
+   margin-top: 10px;
+   margin-bottom: 0px;
+}
+
+.box7 h4 {
+   text-align: center;
+   font-size: 30px;
+}
+
+.box7 .p4 {
+   color: white;
+   font-size: 16px;
+   width: 50%;
+   margin-right: 50px;
+   text-align: justify;
+}
+
+.box7 .p5 {
+   color: white;
+   font-size: 16px;
+   width: 50%;
+   text-align: justify;
+}
+
+.manekineko {
+   width: 50%;
+   height: 50%;
+}
+
+.box9 {
+   margin-bottom: 10px;
+}
+
+.box10 {
+   color: white;
+   font-family: nosutaru;
+   width: 100%;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top: 20px;
+}
+
+.button {
+   background-color: #880000;
+   border-radius: 5px;
+   border: 2px solid;
+   border-color: #242424;
+   width: 80px;
+   height: 30px;
+   font-family: nosutaru;
+   font-size: 16px;
+   font-weight: bold;
+   transition: all 0.3s ease-in-out;
+   margin-right: 10px;
+}
+
+#adivinhar{
+   width: 100px;
+   margin-right: 90px;
+}
+
+.button:hover {
+   color: #ffffff;
+   background-color: #ffd900cb;
+   border: 2px solid;
+   scale: 105%;
+}
+
+.box10 .container2 {
+   display: flex;
+   width: 588px;
+   height: 50%;
+   overflow-wrap: break-word;
+   margin-top: 20px;
+}
+
+#kanji_mensagem {
+   text-align:  center;
+   color: white;
+   width: 100%;
+   font-family: nosutaru;
+}
+
+.box11 {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   color: white;
+   font-family: nosutaru;
+   width: 100%;
+   margin-bottom: 15px;
+   margin-top: 15px;
+}
+
+.box11 h1 {
+   font-family: nosutaru;
+   font-size: 55px;
+   margin: 0px;
+   padding-bottom: 12px;
+}
+
+.box12 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ffd900cb;
+   width: 170px;
+   height: 60px;
+   border: 4px solid;
+   border-color: white;
+   border-radius: 5px;
+   margin-top: 5px;
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+#premio_mensagem {
+   font-family: nosutaru;
+   font-size: 30px;
+   font-weight: bold;
+   margin-right: 5px;
+}
+
+.box14 {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+.box15 {
+   width: 50%; 
+}
+
+.box15 h3 {
+   font-size: 16px;
+   font-weight: lighter;
+}
+
+#input_palpite {
+   text-align: center;
+   border-radius: 5px;
+   margin-left: 30px;
+   font-weight: bold;
+   font-family: nosutaru;
+}
+
+.box15 .container2 {
+   width: 500px;
+   height: 50%;
+   overflow-wrap: break-word;
+   margin-top: 20px;
+}
+
+#resultado_mensagem {
+   width: 100%;
+   font-family: nosutaru;
+   height: 100%;
+}
+
+.box16 {
+   display: flex;
+   justify-content: center;
+   width: 50%;
+   height: 220px;
+}
+
+.box17 {
+   display: flex;
+   align-items: flex-start;
+   flex-direction: column;
+   width: 110px;
+   height: 180px;
+   background-color: #ffff;
+   border: 5px solid;
+   border-color: #6c3c0c;
+   margin-top: 20px;
+}
+
+.box18 {
+   display: flex;
+   align-items: start;
+   width: 40px;
+   height: 40px;
+}
+
+.martelo-sorte {
+   width: 40px;
+   height: 40px;
+}
+
+.box19 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100px;
+   height: 100px;
+}
+
+.box19 .shoubu {
+   display: flex;
+   justify-content: center;
+   width: 10px;
+   height: 100px;
+   font-size: 60px;
+   font-family: yoppafude;
+}
+
+#shoubu_mensagem1{
+   color:#028A0F;
+}
+
+#shoubu_mensagem2{
+   color:#880000;
+}
+
+.footer1 {
+   display: flex;
+   background-color: #cc0404;
+   justify-content: center;
+   width: 100%;
+   line-height: 1px;
+   font-size: 14px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   margin-top: 10px;
+   opacity: 0.9;
 }

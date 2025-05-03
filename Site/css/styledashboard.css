@@ -68,6 +68,7 @@ body {
 .icon {
    width: 100px;
    height: 100px;
+   margin-left: 10px;
 }
 
 .higanbana {
@@ -92,25 +93,7 @@ a:hover {
    font-weight: bold;
 }
 
-.minigames {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.quiz {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.dashboard {
-   list-style: none;
-   font-size: 18px;
-   font-weight: bold;
-}
-
-.conteudo {
+.aba {
    list-style: none;
    font-size: 18px;
    font-weight: bold;

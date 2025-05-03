@@ -10,30 +10,30 @@
 
 <body>
 
-    <div class="header">
+    <div class="box2">
         <div class="container1">
             <div class="container2">
                 <div class="container3">
                     <img class="daruma" src="imagens/daruma.svg" alt="daruma">
                     <img class="higanbana" src="imagens/flor.svg" alt="flor">
                 </div>
-                <div class="container4">
+                <div class="container3">
                     <span>NIHONGO KIZARU
-                        <img class="icon" src="imagens/Kizaru.PNG.png" alt="macaco">
+                        <img class="icon" src="imagens/Kizaru.png" alt="macaco">
                     </span>
                 </div>
                 <div class="container5">
-                    <li class="conteudo">
+                    <li class="aba">
                         <a href="conteudo.html">Conteúdo</a>
                     </li>
-                    <li class="dashboard">
+                    <li class="aba">
                         <a href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="barra">|</li>
-                    <li class="quiz">
+                    <li class="aba">
                         <a href="quiz.html">Quiz</a>
                     </li>
-                    <li class="minigames">
+                    <li class="aba">
                         <a href="#">MiniGames</a>
                     </li>
                     <img class="logout" src="./imagens/logout.png" alt="porta" onclick="sair()">
@@ -59,13 +59,131 @@
             </div>
             <div class="box6">
                 <div class="box7">
-
+                    <h3>ルールの説明</h3>
+                    <p class="p1">Bem-vindo ao minigame 宝くじ! Este jogo tem como meta ajudar você a
+                        aprender a contar os números em japonês, mas antes vamos ver algumas regras: <br><br>
+                        1. O valor mínimo será sempre 1 e o jogador deve inserir um valor máximo seguindo as
+                        condições abaixo:
+                    </p>
+                    <p class="p2">
+                        - O valor máximo deve ser de no mínimo 10! <br>
+                        - O valor máximo deve ser de no máximo 100!
+                    </p>
+                    <p class="p3">
+                        2. Ao clicar no botão 始めよう, aparecerá na tela todos os números do intervalo em:
+                    </p>
+                    <p class="p2">
+                        - Algarismos (1,2,3,4,5,...); <br>
+                        - Kanji (一, 二, 三, 四, 五,...); <br>
+                        - Rōmaji (ichi, ni, san, shi/yon, go,...).
+                    </p>
+                    <p class="p3">
+                        3. Ao mesmo tempo 1 número é aleatoriamente escolhido como o número sorteado da loteria
+                        e o valor do prêmio é exibido ao lado. Em seguida o jogador deve:
+                    </p>
+                    <p class="p2">
+                        - Digitar em <b>Rōmaji</b> no espaço abaixo do prêmio um número
+                        dentro do intervalo definido anteriormente; <br>
+                        - <b>OBS:</b> Alguns números em japonês possuem mais de uma forma de falar<br>
+                        * Por exemplo o 4 pode ser dito 'shi' ou 'yon',
+                        enquanto o 7 se diz 'shichi' ou 'nana'. <br>
+                        * Entretando apenas as formas 'yon' para 4 e 'nana' para 7 serão consideradas neste jogo.
+                    </p>
+                    <p class="p3">
+                        4. Ao clicar no botão 当ててみる, caso o número digitado não seja o sorteado:
+                    </p>
+                    <p class="p2">
+                        - Aparecerá um contador de tentativas mostrando quantas chances restam; <br>
+                        - Aparecerá uma dica nova a cada erro; <br>
+                        - O valor do prêmio reduzirá a cada tentativa.
+                    </p>
                 </div>
-                <h3>|</h3>
+                <span>|</span>
                 <div class="box7">
+                    <h4>Vocabulário(語彙)</h4>
+                    <div class="box2">
+                        <p class="p4">
+                            . 宝くじ(takarakuji) - loteria <br><br>
+                            . 説明(setsumei) - explicação <br><br>
+                            . 語彙(goi) - vocabulário <br><br>
+                            . 始める(hajimeru) - começar <br><br>
+                            . 当ててみる(atetemiru) - adivinhar <br><br>
+                            . 残念(zan'nen) - que pena, poxa vida <br><br>
+                            . 勝利(shouri) - vitória
 
+                        </p>
+                        <p class="p5">
+                            . ルール(rūru) - regra(s) <br><br>
+                            . ルールの説明(rūru no setsumei) - explicação das regras <br><br>
+                            . 始めよう(hajimeyou) - vamos começar <br><br>
+                            . おめでとう(omedetou) - parabéns <br><br>
+                            . 賞金(shoukin) - prêmio em dinheiro <br><br>
+                            . 敗北(haiboku) - derrota
+                        </p>
+                    </div>
+                    <div class="box2">
+                        <img class="manekineko" src="./imagens/ManekiNeko.png" alt="Maneki Neko">
+                    </div>
                 </div>
             </div>
+            <div class="box9">
+                <div class="box6">
+                    <div class="box10">
+                        <div class="box2">
+                            <h3>Digite valor máximo:</h3>
+                        </div>
+                        <div class="box2">
+                            <input type="number" id="input_max">
+                        </div>
+                        <div class="container">
+                            <button class="button" onclick="iniciar()">始めよう</button>
+                        </div>
+                        <div class="container2">
+                            <div id="kanji_mensagem"></div>
+                        </div>
+                    </div>
+                    <span>|</span>
+                    <div class="box2">
+                        <div class="box11">
+                            <h1>賞金!</h1>
+                            <div class="box12">
+                                <div class="box13">
+                                    <div id="premio_mensagem"></div>
+                                </div>
+                            </div>
+                            <div class="box14">
+                                <div class="box15">
+                                    <h3>Escreva seu palpite em Rōmaji:</h3>
+                                    <input type="text" id="input_palpite">
+                                    <div class="container">
+                                        <button class="button" id="adivinhar" onclick="adivinhar()">当ててみる</button>
+                                    </div>
+                                    <div class="container2">
+                                        <div id="resultado_mensagem"></div>
+                                    </div>
+                                </div>
+                                <div class="box16">
+                                    <div class="box17">
+                                        <div class="box18">
+                                            <img class="martelo-sorte" src="./imagens/martelo.sorte.svg" alt="martelo">
+                                        </div>
+                                        <div class="box19">
+                                            <div class="shoubu" id="shoubu_mensagem1"></div>
+                                            <div class="shoubu" id="shoubu_mensagem2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer1">
+        <div class="footer2">
+            <h3>@2025, Luiz César de Camillo</h3>
         </div>
     </div>
 
@@ -73,6 +191,8 @@
 
 </html>
 
+<script src="./js/minigame-iniciar.js"></script>
+<script src="./js/minigame-adivinhar.js"></script>
 <script>
 
     function sair() {

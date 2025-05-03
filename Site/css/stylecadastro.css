@@ -73,6 +73,7 @@ body {
 .icon {
     width: 100px;
     height: 100px;
+    margin-left: 10px;
 }
 
 .higanbana {
@@ -97,19 +98,7 @@ a:hover {
     font-weight: bold;
 }
 
-.cadastro {
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.login {
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.home {
+.aba {
     list-style: none;
     font-size: 20px;
     font-weight: bold;
@@ -194,12 +183,14 @@ a:hover {
     background-color:#880000;
     font-weight: bold;
     font-size: 15px;
+    transition: all 0.3s ease-in-out;
 }
 
 .box2 button:hover{
     color:#ffffff;
     background-color: #ffd900cb;
     border: 2px solid;
+    scale: 105%;
 }
 
 .footer{

@@ -68,6 +68,7 @@ body {
 .icon {
     width: 100px;
     height: 100px;
+    margin-left: 10px;
 }
 
 .higanbana {
@@ -92,19 +93,7 @@ a:hover {
     font-weight: bold;
 }
 
-.cadastro {
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.login {
-    list-style: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.home {
+.aba {
     list-style: none;
     font-size: 20px;
     font-weight: bold;
