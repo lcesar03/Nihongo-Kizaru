@@ -34,23 +34,26 @@ function adivinhar() {
                         mensagem3 = `おめでとう! Você adivinhou o número da loteria!<br>
                         Você ganhou ${premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })}<br>`
                         shoubu_mensagem1.innerHTML = `勝利`
+                        lista_numero = ['',]
+                        lista_kanji2 = ['',]
+                        lista_palpite = ['',]
 
                     } else {
                         desconto = Math.round((max / tentativa_base) * 10000)
                         tentativas = tentativas - 1
-                        premio = Number(premio - desconto)*1.05
+                        premio = Number(premio - desconto) * 1.05
                         dica++
                         if (tentativas > 0 && romaji_atual < sorteado) {
                             romaji_atual = lista_kanji2[i]
                             mensagem3 = `Quase! Você ainda tem: ${tentativas} tentativa(s) <br>`
-                            mensagem2+= `${dica}ª dica - O número sorteado é maior que ${romaji_atual} <br>
+                            mensagem2 += `${dica}ª dica - O número sorteado é maior que ${romaji_atual} <br>
                             `
                             premio_mensagem.innerHTML = `${premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })}`
 
                         } else if (tentativas > 0 && romaji_atual > sorteado) {
                             romaji_atual = lista_kanji2[i]
                             mensagem3 = `Quase! Você ainda tem: ${tentativas} tentativa(s) <br>`
-                            mensagem2+= `${dica}ª dica - O número sorteado é menor que ${romaji_atual} <br>
+                            mensagem2 += `${dica}ª dica - O número sorteado é menor que ${romaji_atual} <br>
                             `
                             premio_mensagem.innerHTML = `${premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })}`
 
@@ -59,7 +62,7 @@ function adivinhar() {
                             Parece que não foi dessa vez...
                             `
                             mensagem3 = `残念! Você tem 0 tentativa(s)<br>`
-                            shoubu_mensagem2.innerHTML=`敗北`
+                            shoubu_mensagem2.innerHTML = `敗北`
                             premio_mensagem.innerHTML = 0
                             lista_numero = ['',]
                             lista_kanji2 = ['',]
