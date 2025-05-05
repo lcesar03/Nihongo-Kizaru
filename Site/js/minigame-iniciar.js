@@ -1,9 +1,9 @@
 premio_mensagem.innerHTML = 0
 var lista_kanji = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
 var lista_romaji = ['', 'ichi', 'ni', 'san', 'yon', 'go', 'roku', 'nana', 'hachi', 'kyuu']
-var lista_numero = ['',]  
-var lista_palpite = ['',] 
-var lista_kanji2 = ['',] 
+var lista_numero = ['',]
+var lista_palpite = ['',]
+var lista_kanji2 = ['',]
 var min = 1
 var max = 0
 var intervalo = 0
@@ -18,6 +18,9 @@ function iniciar() {
     premio = Number(max * 10000)
     var mensagem = ''
     premio_mensagem.innerHTML = premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })
+    lista_numero = ['',]
+    lista_kanji2 = ['',]
+    lista_palpite = ['',]
 
     if (max > 100 || max < 10) {
         alert('Valor máximo deve ser de 10 até 100!')
@@ -130,7 +133,7 @@ function iniciar() {
     shoubu_mensagem1.innerHTML = ''
     shoubu_mensagem2.innerHTML = ''
     mensagem2 = ''
-    mensagem3=''
+    mensagem3 = ''
     tentativas = 10
     dica = 0
 }
