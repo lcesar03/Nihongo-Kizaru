@@ -24,7 +24,7 @@
                 </div>
                 <div class="container5">
                     <li class="aba">
-                        <a href="home.html">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="barra">|</li>
                     <li class="aba">
@@ -75,14 +75,24 @@
         var email = email_input.value
         var senha = senha_input.value
 
-        if (email == 'teste@gmail.com' && senha == 'Palmeiras!') {
-            alert('Login efetuado com sucesso!')
-            window.location.href = "conteudo.html"
-
-        } else {
-            alert('Email e/ou senha inválidas!')
+        if (email == "" || senha == "") {
+            alert('Os campos não podem ficar em branco!')
         }
+        else {
 
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            })
+
+            window.location.href = "conteudo.html"
+        }
     }
 
 </script>
