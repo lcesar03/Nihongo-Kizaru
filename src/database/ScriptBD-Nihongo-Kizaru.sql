@@ -5,7 +5,7 @@ USE nihongo;
 CREATE TABLE usuario(
 idUsuario INT PRIMARY KEY auto_increment,
 nome VARCHAR(150) NOT NULL,
-email VARCHAR(55) NOT NULL,
+email VARCHAR(55) UNIQUE NOT NULL,
 telefone CHAR(11) NOT NULL,
 senha VARCHAR(45) NOT NULL
 );

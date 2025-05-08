@@ -89,10 +89,39 @@
                     emailServer: email,
                     senhaServer: senha
                 })
+
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+                alert('Cadastro efetuado com sucesso!')
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.TELEFONE_USUARIO = json.telefone;
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+                    });                    
+
+                    window.location.href = "conteudo.html"
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
             })
 
-            window.location.href = "conteudo.html"
         }
     }
+
 
 </script>

@@ -116,7 +116,6 @@
             alert('As senhas devem ser iguais!')
 
         } else {
-            alert('Cadastro efetuado com sucesso!')
 
             fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -124,8 +123,6 @@
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nome,
                     emailServer: email,
                     telefoneServer: telefone,
@@ -133,6 +130,7 @@
                 }),
             })
             
+            alert('Cadastro efetuado com sucesso!')
             window.location.href = "login.html"
 
         }
