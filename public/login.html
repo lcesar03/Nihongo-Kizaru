@@ -92,7 +92,7 @@
 
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
-                alert('Cadastro efetuado com sucesso!')
+                
                 if (resposta.ok) {
                     console.log(resposta);
 
@@ -105,7 +105,8 @@
                         sessionStorage.ID_USUARIO = json.id;
                     });                    
 
-                    window.location.href = "conteudo.html"
+                    alert('Login efetuado com sucesso!')
+                    window.location = "conteudo.html"
 
                 } else {
 
