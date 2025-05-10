@@ -77,8 +77,8 @@
 
         if (email == "" || senha == "") {
             alert('Os campos não podem ficar em branco!')
-        }
-        else {
+
+        } else {
 
             fetch("/usuarios/autenticar", {
                 method: "POST",
@@ -111,6 +111,7 @@
                 } else {
 
                     console.log("Houve um erro ao tentar realizar o login!");
+                    alert('Email e/ou senha inváidos!')
 
                     resposta.text().then(texto => {
                         console.error(texto);
