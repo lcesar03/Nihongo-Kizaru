@@ -12,13 +12,13 @@ body {
 }
 
 @font-face {
-    font-family: minamoto;
-    src: url('../fontes/Minamoto.ttf');
+    font-family: yoppa-fude;
+    src: url('../fontes/Yoppa-fude.ttf');
 }
 
 @font-face {
-    font-family: yoppa-fude;
-    src: url('../fontes/Yoppa-fude.ttf');
+    font-family: minamoto;
+    src: url('../fontes/Minamoto.ttf');
 }
 
 .header {
@@ -64,14 +64,14 @@ body {
     font-size: 36px;
     width: 100px;
     height: 100px;
-    margin-left: 30px;
+    margin-left: 80px;
 }
 
 .container5 {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    width: 300px;
+    width: 400px;
     height: 80px;
 }
 
@@ -105,8 +105,14 @@ a:hover {
 
 .aba {
     list-style: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
+}
+
+.logout {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
 .box1 {
@@ -138,115 +144,105 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: yoppa-fude;
-    font-size: 66px;
+    font-size: 72px;
     color: #880000;
     border: 3px groove;
     text-shadow: 2px 2px 2px black;
+    letter-spacing: 10px;
     border-color: #880000;
 }
 
 .box3 {
-    display: flex;
-    justify-content: center;
-    background-color: white;
     width: 100%;
-    height: 365px;
-    
+    height: 100%;
+    background-color: white;
+    font-family: minamoto;
+}
+
+.box3 p {
+    margin-left: 120px;
+    text-indent: 15px;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.box3 .p1 {
+    margin-left: 120px;
+    margin-right: 120px;
+    line-height: 20px;
+    text-indent: 15px;
+    font-size: 14px;
+    text-align: justify;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.box3 .p1::first-letter {
+    font-size: 22px;
 }
 
 .box4 {
     display: flex;
-    align-items: center;
-    width: 85%;
-    height: 100%;
-}
-
-.torii {
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: invert(9%) sepia(96%) saturate(4506%) hue-rotate(7deg) brightness(87%) contrast(117%);;
 }
 
-.box4 p {
-    font-family: minamoto;
-    font-size: 14px;
-    text-indent: 20px;
-    line-height: 20px;
-    width: 100%;
-    text-align: justify;
+.box4 .p2 {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
-.box4 p::first-letter {
-    font-size: 32px;
+.box4 .p3 {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.ajuste {
+    width: 21%;
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.ajuste2 {
+    text-align: left;
+    width: 15%;
+}
+
+.ajuste3 {
+    text-align: center;
+    width: 13%;
 }
 
 .box5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffd900cb;
+    width: 600px;
+    height: 350px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.tabelaHiragana {
     width: 100%;
-    height: 500px;
-}
-
-.box6 {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
     height: 100%;
-    margin-right: 30px;
 }
 
-.box6 h1 {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-}
-
-.box6 h3 {
-    color: white;
-    font-family: minamoto;
-    font-size: 24px;
-    margin-top: 45px;
-}
-
-.box6 p{
-    font-family: minamoto;
-    text-align: justify;
-    font-size: 14px;
-    text-indent: 10px;
-    line-height: 25px;
-    margin-top: 10px;
-    font-size: bold;
-}
-
-.box7 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 20px;
-    width: 30%;
-    height: 400px;
-    background-color:#cc0404;
-    border-radius: 55%;
-    border: 3px groove;
-}
-
-.box7 img {
-    margin-left: 15px;
-    width: 75%;
-    height: 90%;
-}
-
-.footer{
+.footer {
     display: flex;
     background-color: #cc0404;
     justify-content: center;
     width: 100%;
     line-height: 1px;
     font-size: 14px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: 10px;
 }

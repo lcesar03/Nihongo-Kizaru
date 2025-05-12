@@ -10,22 +10,30 @@ var intervalo = 0
 var sorteado = 0
 var numero_atual = 0
 var premio = 0
+premio_mensagem.innerHTML = premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })
 
 function iniciar() {
     max = Number(input_max.value)
     intervalo = max - min
     sorteado = parseInt((Math.random()) * (intervalo + 1) + min)
-    premio = Number(max * 10000)
     var mensagem = ''
-    premio_mensagem.innerHTML = premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })
     lista_numero = ['',]
     lista_kanji2 = ['',]
     lista_palpite = ['',]
 
     if (max > 100 || max < 10) {
-        alert('Valor máximo deve ser de 10 até 100!')
+        erro_mensagem.innerHTML = `<b>Valor inválido!</b><br><br> Valor máximo deve ser de 10 até 100!`
+        document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+        setTimeout(() => {
+            erro_mensagem.innerHTML = ``
+            document.getElementById("caixa_erro").style.backgroundColor = ""
+        }, 4000)
 
     } else {
+        premio = Number(max * 10000)
+        premio_mensagem.innerHTML = premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })
+
         for (var contador = min; contador <= max; contador++) {
             lista_numero.push((contador).toString())
         }

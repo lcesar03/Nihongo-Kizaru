@@ -55,6 +55,9 @@
                         <button onclick="entrar()" class="botao">Entrar</button>
                     </div>
                 </div>
+                <div id="caixa_erro" class="erro">
+                    <div id="erro_mensagem"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,7 +79,14 @@
         var senha = senha_input.value
 
         if (email == "" || senha == "") {
-            alert('Os campos não podem ficar em branco!')
+            erro_mensagem.innerHTML = `<b>ERRO!</b><br><br> Os campos não podem ficar em branco!`
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+            setTimeout(() => {
+                erro_mensagem.innerHTML = ``
+                document.getElementById("caixa_erro").style.backgroundColor = ""
+            }, 4000)
+
 
         } else {
 
@@ -92,7 +102,7 @@
 
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
-                
+
                 if (resposta.ok) {
                     console.log(resposta);
 
@@ -103,15 +113,28 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.id;
-                    });                    
+                    });
 
-                    alert('Login efetuado com sucesso!')
-                    window.location = "conteudo.html"
+                    erro_mensagem.innerHTML = `<b>AUTORIZADO!</b><br><br> Login efetuado com sucesso!`
+                    document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+                    setTimeout(() => {
+                        erro_mensagem.innerHTML = ``
+                        document.getElementById("caixa_erro").style.backgroundColor = ""
+                        window.location = "conteudo.html"
+                    }, 2000)
 
                 } else {
 
                     console.log("Houve um erro ao tentar realizar o login!");
-                    alert('Email e/ou senha inváidos!')
+                    
+                    erro_mensagem.innerHTML = `<b>ERRO!</b><br><br> Email e/ou senha inválidos!`
+                    document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+                    setTimeout(() => {
+                        erro_mensagem.innerHTML = ``
+                        document.getElementById("caixa_erro").style.backgroundColor = ""
+                    }, 4000)
 
                     resposta.text().then(texto => {
                         console.error(texto);

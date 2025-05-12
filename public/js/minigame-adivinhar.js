@@ -63,7 +63,8 @@ function adivinhar() {
                             `
                             mensagem3 = `残念! Você tem 0 tentativa(s)<br>`
                             shoubu_mensagem2.innerHTML = `敗北`
-                            premio_mensagem.innerHTML = 0
+                            premio = 0
+                            premio_mensagem.innerHTML = premio.toLocaleString("ja-JP", { style: "currency", currency: "JPY" })
                             lista_numero = ['',]
                             lista_kanji2 = ['',]
                             lista_palpite = ['',]
@@ -76,7 +77,13 @@ function adivinhar() {
             }
 
         } else {
-            alert('Palavra inválida! Verifique se você escreveu corretamente')
+            erro_mensagem.innerHTML = `<b>Palavra inválida!</b><br><br> Verifique se você escreveu corretamente!`
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+            setTimeout(() => {
+                erro_mensagem.innerHTML = ``
+                document.getElementById("caixa_erro").style.backgroundColor = ""
+            }, 4000)
         }
 
         resultado_mensagem.innerHTML = mensagem3 + mensagem2
