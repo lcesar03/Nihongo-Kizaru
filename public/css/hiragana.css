@@ -236,6 +236,40 @@ a:hover {
     height: 100%;
 }
 
+.box6 {
+    display: flex;
+    justify-content: space-between;
+    width: 520px;
+    height: 300px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.agyou {
+   height: 300px;
+   border: 2px solid;
+   border-color: #880000;
+}
+
+.adan {
+    width: 450px;
+    border: 2px solid;
+    border-color: #880000;
+}
+
+.legenda1 {
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    letter-spacing: 10px;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
 .footer {
     display: flex;
     background-color: #cc0404;
