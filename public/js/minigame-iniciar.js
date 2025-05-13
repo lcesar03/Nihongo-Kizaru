@@ -131,6 +131,7 @@ function iniciar() {
             } else {
                 mensagem += `100 百 hyaku`
                 lista_palpite.push('hyaku')
+                lista_kanji2.push('百')
             }
 
         }

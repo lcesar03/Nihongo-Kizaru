@@ -1,0 +1,153 @@
+body {
+   width: 100%;
+   height: 100%;
+   padding: 0px;
+   margin: 0px;
+   background-color: #880000;
+}
+
+@font-face {
+   font-family: midorima;
+   src: url('../fontes/Midorima.ttf');
+}
+
+@font-face {
+   font-family: yoppa-fude;
+   src: url('../fontes/Yoppa-fude.ttf');
+}
+
+@font-face {
+   font-family: minamoto;
+   src: url('../fontes/Minamoto.ttf');
+}
+
+.header {
+   display: flex;
+   justify-content: center;
+}
+
+.container1 {
+   background-color: #cc0404;
+   border-bottom: 3px solid;
+   border-top: 3px solid;
+   height: 100px;
+   width: 100%;
+}
+
+.container2 {
+   display: flex;
+   justify-content: space-between;
+   height: 100px;
+   width: 100%;
+}
+
+.container3 {
+   height: 100px;
+   width: 210px;
+}
+
+.daruma {
+   width: 100px;
+   height: 100px;
+}
+
+.container4 {
+   height: 100px;
+   width: 210px;
+}
+
+.container4 span {
+   display: flex;
+   align-items: center;
+   text-align: center;
+   font-family: midorima;
+   font-size: 36px;
+   width: 100px;
+   height: 100px;
+   margin-left: 80px;
+}
+
+.container5 {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-end;
+   width: 400px;
+   height: 80px;
+}
+
+.icon {
+   width: 100px;
+   height: 100px;
+   margin-left: 10px;
+}
+
+.higanbana {
+   width: 100px;
+   height: 100px;
+}
+
+a {
+   color: #410101;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #eeea1b;
+}
+
+.barra {
+   display: flex;
+   justify-content: center;
+   list-style: none;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.aba {
+   list-style: none;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.logout {
+   width: 50px;
+   height: 50px;
+   cursor: pointer;
+}
+
+.box1 {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+.box2 {
+   display: flex;
+   position: relative;
+   width: 99.5%;
+   height: 200px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.quadro {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.titulo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-family: yoppa-fude;
+   font-size: 72px;
+   color: #880000;
+   border: 3px groove;
+   text-shadow: 2px 2px 2px black;
+   letter-spacing: 10px;
+   border-color: #880000;
+}
