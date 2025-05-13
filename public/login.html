@@ -109,10 +109,9 @@
                     resposta.json().then(json => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-                        sessionStorage.TELEFONE_USUARIO = json.telefone;
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_USUARIO = json.id;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
                     });
 
                     erro_mensagem.innerHTML = `<b>AUTORIZADO!</b><br><br> Login efetuado com sucesso!`
