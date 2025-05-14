@@ -187,30 +187,30 @@ a:hover {
 }
 
 .erro {
-    display: flex;
-    position: absolute;
-    width: 320px;
-    height: 100px;
-    top: 1%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    opacity: 0.9;
+   display: flex;
+   position: absolute;
+   width: 320px;
+   height: 100px;
+   top: 1%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 5px;
+   opacity: 0.9;
 }
 
 #erro_mensagem {
-    font-family: minamoto;
-    font-size: 14px;
-    text-align: justify;
-    width: 100%;
-    height: 100%;
-    margin: 20px;
-    color: white;
+   font-family: minamoto;
+   font-size: 14px;
+   text-align: justify;
+   width: 100%;
+   height: 100%;
+   margin: 20px;
+   color: white;
 }
 
 #erro_mensagem b {
-    font-family: arial;
-    font-size: 16px;
+   font-family: arial;
+   font-size: 16px;
 }
 
 .box6 span {
@@ -325,7 +325,7 @@ a:hover {
    margin-right: 10px;
 }
 
-#adivinhar{
+#adivinhar {
    width: 100px;
    margin-right: 90px;
 }
@@ -346,7 +346,7 @@ a:hover {
 }
 
 #kanji_mensagem {
-   text-align:  center;
+   text-align: center;
    color: white;
    width: 100%;
    font-family: nosutaru;
@@ -399,7 +399,7 @@ a:hover {
 }
 
 .box15 {
-   width: 50%; 
+   width: 50%;
 }
 
 .box15 h3 {
@@ -477,12 +477,12 @@ a:hover {
    font-family: yoppafude;
 }
 
-#shoubu_mensagem1{
-   color:#028A0F;
+#shoubu_mensagem1 {
+   color: #028A0F;
 }
 
-#shoubu_mensagem2{
-   color:#880000;
+#shoubu_mensagem2 {
+   color: #880000;
 }
 
 .footer1 {
