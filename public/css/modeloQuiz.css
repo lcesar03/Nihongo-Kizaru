@@ -186,7 +186,7 @@ a:hover {
    border-radius: 3px;
 }
 
-#textoInicial {
+.textoIniFin {
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -195,13 +195,13 @@ a:hover {
    height: 100%;
 }
 
-#textoInicial p {
+.textoIniFin p {
    font-size: 20px;
    text-decoration: underline;
    margin-top: 30px;
 }
 
-#textoInicial span {
+.textoIniFin span {
    width: 90%;
    font-size: 20px;
    margin-top: 40px;
