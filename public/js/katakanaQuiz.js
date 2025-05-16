@@ -1,83 +1,83 @@
 var lista_questoes = [
     {
-        pergunta: "1. Como se escreve a letra A em hiragana?",
-        alternativaA: "じ",
-        alternativaB: "あ",
-        alternativaC: "ま",
-        alternativaD: "る",
-        alternativaCorreta: "あ"
+        pergunta: "1. Como se escreve a letra Nu em katakana?",
+        alternativaA: "チ",
+        alternativaB: "エ",
+        alternativaC: "ヌ",
+        alternativaD: "モ",
+        alternativaCorreta: "ヌ"
     },
     {
-        pergunta: "2. Como se escreve a letra つ em rōmaji?",
-        alternativaA: "Gi",
-        alternativaB: "No",
-        alternativaC: "Ya",
-        alternativaD: "Tsu",
-        alternativaCorreta: "Tsu"
+        pergunta: "2. Como se escreve a letra テ em rōmaji?",
+        alternativaA: "Te",
+        alternativaB: "Ba",
+        alternativaC: "Yo",
+        alternativaD: "Mi",
+        alternativaCorreta: "Te"
     },
     {
-        pergunta: "3. Como se escreve a letra Be em hiragana?",
-        alternativaA: "よ",
-        alternativaB: "た",
-        alternativaC: "べ",
-        alternativaD: "に",
-        alternativaCorreta: "べ"
+        pergunta: "3. Como se escreve a letra Shi em katakana?",
+        alternativaA: "ン",
+        alternativaB: "ツ",
+        alternativaC: "シ",
+        alternativaD: "ソ",
+        alternativaCorreta: "シ"
     },
     {
-        pergunta: "4. Como se escreve a letra み em rōmaji?",
-        alternativaA: "Mi",
-        alternativaB: "Nu",
-        alternativaC: "Ga",
-        alternativaD: "Se",
-        alternativaCorreta: "Mi"
+        pergunta: "4. Como se escreve a palavra hotel em katakana?",
+        alternativaA: "ホテレ",
+        alternativaB: "ホテル",
+        alternativaC: "ボテル",
+        alternativaD: "ポテレ",
+        alternativaCorreta: "ホテル"
     },
     {
-        pergunta: "5. Como se escreve a sequência Chi-Ra-N-E-Bo em hiragana?",
-        alternativaA: "ち-ら-ぼ-え-ん",
-        alternativaB: "ら-ち-ん-え-ぼ",
-        alternativaC: "ら-ん-え-ぼ-ち",
-        alternativaD: "ち-ら-ん-え-ぼ",
-        alternativaCorreta: "ち-ら-ん-え-ぼ"
+        pergunta: "5. Como se escreve a sequência Ne-Wo-O-Me-Ga em katakana?",
+        alternativaA: "ミ-オ-ヲ-ノ-ガ",
+        alternativaB: "ミ-ヲ-オ-ノ-カ",
+        alternativaC: "ロ-オ-ヲ-ネ-カ",
+        alternativaD: "ネ-ヲ-オ-メ-ガ",
+        alternativaCorreta: "ネ-ヲ-オ-メ-ガ"
     },
     {
-        pergunta: "6. Como se escreve a sequência て-ろ-も-き-な em rōmaji?",
-        alternativaA: "Ro-Ki-Mo-Na-Te",
-        alternativaB: "Ro-Mo-Ki-Na-Te",
-        alternativaC: "Ro-Te-Mo-Ki-Na",
-        alternativaD: "Te-Ro-Mo-Ki-Na",
-        alternativaCorreta: "Te-Ro-Mo-Ki-Na"
+        pergunta: "6. Como se escreve a sequência ヂ-コ-ブ-ス-イ em rōmaji?",
+        alternativaA: "Ji-Ko-Bu-Su-I",
+        alternativaB: "Chi-Go-Pu-Su-E",
+        alternativaC: "Chi-Ko-Pu-Se-I",
+        alternativaD: "Ji-Go-Pu-Se-I",
+        alternativaCorreta: "Ji-Ko-Bu-Su-I"
     },
     {
-        pergunta: "7. Como se escreve a letra Ha com handakuten em hiragana?",
-        alternativaA: "ぱ",
-        alternativaB: "び",
-        alternativaC: "ば",
-        alternativaD: "ぴ",
-        alternativaCorreta: "ぱ"
+        pergunta: "7. Como se escreve a letra Hi com handakuten em katakana?",
+        alternativaA: "バ",
+        alternativaB: "ビ",
+        alternativaC: "パ",
+        alternativaD: "ピ",
+        alternativaCorreta: "ピ"
     },
     {
-        pergunta: "8. Como se escreve a letra Se com dakuten em hiragana?",
-        alternativaA: "ぜ",
-        alternativaB: "ど",
-        alternativaC: "ぞ",
-        alternativaD: "ぺ",
-        alternativaCorreta: "ぜ"
+        pergunta: "8. Como se escreve a letra Ku com dakuten em katakana?",
+        alternativaA: "ゲ",
+        alternativaB: "グ",
+        alternativaC: "ペ",
+        alternativaD: "ザ",
+        alternativaCorreta: "グ"
     },
     {
-        pergunta: "9. Como se escreve a palavra せんせい em rōmaji?",
-        alternativaA: "Sansai",
-        alternativaB: "Sensei",
-        alternativaC: "Saisai",
-        alternativaD: "Sonsoi",
-        alternativaCorreta: "Sensei"
+        pergunta: "9. Como se escrevem as palavras vidro e rádio em katakana?",
+        alternativaA: "ガワス-フジオ",
+        alternativaB: "ガラス-ラヅオ",
+        alternativaC: "ガラス-ラジオ",
+        alternativaD: "ガフス-ラヅオ",
+        alternativaCorreta: "ガラス-ラジオ"
     },
     {
-        pergunta: "10. Como se escreve a coluna do Zagyou em hiragana?",
-        alternativaA: "ざ-じ-づ-ぞ-ぜ",
-        alternativaB: "ざ-ぢ-ず-ぜ-ぞ",
-        alternativaC: "ざ-じ-ず-ぜ-ぞ",
-        alternativaD: "ざ-ぢ-づ-ぞ-ぜ",
-        alternativaCorreta: "ざ-じ-ず-ぜ-ぞ"
+        pergunta: "10. Como se escreve a coluna do Dagyou em katakana?",
+        alternativaA: "グ-ヂ-ジ-ド-デ",
+        alternativaB: "ダ-ヂ-ヅ-デ-ド",
+        alternativaC: "グ-ヂ-ジ-デ-ド",
+        alternativaD: "ダ-ヂ-ゾ-ド-デ",
+        alternativaCorreta: "ダ-ヂ-ヅ-デ-ド"
     }
 ]
 
