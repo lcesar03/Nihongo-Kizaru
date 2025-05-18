@@ -11,6 +11,11 @@ body {
    src: url('../fontes/Midorima.ttf');
 }
 
+@font-face {
+   font-family: minamoto;
+   src: url('../fontes/Minamoto.ttf');
+}
+
 .header {
    display: flex;
    justify-content: center;
@@ -103,4 +108,103 @@ a:hover {
    width: 50px;
    height: 50px;
    cursor: pointer;
+}
+
+.box1 {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 555px;
+   margin-top: 7px;
+}
+
+.box2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 99%;
+   height: 100%;
+   background-color: white;
+   border: 3px solid;
+   border-radius: 5px;
+}
+
+.box3 {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   width: 49%;
+   height: 98%;
+}
+
+.box3 h3 {
+   font-family: minamoto;
+   width: 100%;
+   height: 11px;
+   text-align: center;
+   font-size: 15px;
+}
+
+#select_quiz {
+   text-align: center;
+   font-family: minamoto;
+   width: 20%;
+   height: 20px;
+   border-radius: 5px;
+   background-color: black;
+   color: white;
+   margin-bottom: 15px;
+}
+
+.KPI {
+   display: flex;
+   justify-content: space-evenly;
+   width: 100%;
+   height: 70px;
+}
+
+.moldura {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   width: 32%;
+   height: 100%;
+   background-color: #410101;
+   border-radius: 10px;
+   font-family: minamoto;
+}
+
+.moldura h6 {
+   width: 100%;
+   text-align: justify;
+   margin: 0px;
+   margin-left: 15px;
+   margin-bottom: 5px;
+   font-size: 12px;
+   font-weight: lighter;
+   opacity: 0.9;
+}
+
+.moldura h1 {
+   margin: 0px;
+   font-size: 40px;
+}
+
+.moldura h2 {
+   margin: 0px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   font-size: 26px;
+}
+
+.box4 {
+   display: flex;
+   width: 49%;
+   height:98%;
+}
+
+.box4 .moldura {
+   margin-top: 75px;
 }

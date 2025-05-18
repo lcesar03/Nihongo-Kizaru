@@ -85,6 +85,9 @@ var i = 0
 var pontos = 0
 var qtdquestoes = lista_questoes.length
 var lista_alternativas = []
+var pctAcertos = 0
+var pctErros = 0
+var idTentativa = 0
 
 function esconder() {
     document.getElementById('questionario').style.display = "none"
@@ -92,11 +95,41 @@ function esconder() {
 }
 
 function iniciar() {
+    var idQuiz = 101
+    var idUsuario = sessionStorage.ID_USUARIO
+
     document.getElementById('textoInicial').style.display = "none"
     document.getElementById('questionario').style.display = "flex"
     document.getElementById('botaoFin').style.display = "none"
 
     exibir()
+
+    fetch("/quiz/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuarioVincularServer: idUsuario,
+            idQuizVincularServer: idQuiz
+        })
+
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+            console.log(resposta);
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                sessionStorage.ID_TENTATIVA = json.insertId;
+                idTentativa = sessionStorage.ID_TENTATIVA
+            });
+
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
 
 }
 
@@ -195,12 +228,37 @@ function finalizar() {
             PARABÉNS!!! Você atingiu a nota máxima!`
         }
 
+        var acertos = Number((pontos * 100) / qtdquestoes)
+        var erros = Number(100 - acertos)
+        pctAcertos = `${acertos}%`
+        pctErros = `${erros}%`
+
+        fetch("/quiz/atualizar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                pctAcertosServer: pctAcertos,
+                pctErrosServer: pctErros,
+                idTentativaServer: idTentativa
+            })
+
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
     }
 
 }
 
 function voltar() {
-   window.location.reload()
+    window.location.reload()
 }
 
 function limpar() {

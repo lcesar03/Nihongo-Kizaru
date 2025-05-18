@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/styledashboard.css">
 </head>
+
 <body>
 
     <div class="header">
@@ -18,7 +20,7 @@
                 <div class="container4">
                     <span>NIHONGO KIZARU
                         <img class="icon" src="imagens/Kizaru.png" alt="macaco">
-                    </span>                   
+                    </span>
                 </div>
                 <div class="container5">
                     <li class="aba">
@@ -39,10 +41,77 @@
             </div>
         </div>
     </div>
-    
-    
+
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+                <h3>Selecione um Quiz:</h3>
+                <select id="select_quiz">
+                    <option value="geral">Geral</option>
+                    <option value="hiragana">Hiragana</option>
+                    <option value="katakana">Katakana</option>
+                    <option value="kanji">Kanji</option>
+                    <option value="cores">Cores</option>
+                    <option value="animais">Animais</option>
+                    <option value="frutas">Frutas</option>
+                </select>
+                <div class="KPI">
+                    <div class="moldura">
+                        <h6>Maior Nota:</h6>
+                        <h1>7</h1>
+                    </div>
+                    <div class="moldura">
+                        <h6>Menor Nota:</h6>
+                        <h1>4</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="box4">
+                <div class="KPI">
+                    <div class="moldura">
+                        <h6>Quiz com maior dificuldade:</h6>
+                        <h2>Hiragana</h2>
+                    </div>
+                    <div class="moldura">
+                        <h6>Quiz com menor dificuldade:</h6>
+                        <h2>Katakana</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
 
 <script src="./js/sessão.js"></script>
 <script>validarSessao2()</script>
+<script>
+
+    function obterDadosGrafico() {
+
+        if (atualizacao != undefined) {
+            clearTimeout(atualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
+
+</script>

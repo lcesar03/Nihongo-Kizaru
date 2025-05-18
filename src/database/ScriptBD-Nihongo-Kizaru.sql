@@ -29,3 +29,7 @@ dtHoraFim DATETIME DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fkUsuarioTent FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
     CONSTRAINT fkQuizTent FOREIGN KEY (fkQuiz) REFERENCES quiz(idQuiz)
 );
+
+INSERT INTO quiz VALUES
+(default, 'Hiragana', 'Questionário sobre o alfabeto hiragana', 10),
+(default, 'Katakana', 'Questionário sobre o alfabeto katakana', 10);
