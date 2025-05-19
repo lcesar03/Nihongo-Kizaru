@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function buscar(idUsuario, limite) {
 
-    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' ORDER BY idTentativa DESC LIMIT ${limite}`;
+    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' ORDER BY idTentativa DESC`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

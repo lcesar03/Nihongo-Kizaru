@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="grafico">
-                    <div id="graficoNota"></div>
+                    <canvas id="graficoNota"></canvas>
                 </div>
             </div>
             <div class="box4">
@@ -129,6 +129,8 @@
     }
 
     function plotarGrafico(resposta, idUsuario) {
+        console.log(resposta)
+        console.log(idUsuario)
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -152,7 +154,7 @@
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.momento_grafico);
+            labels.push(`${i+1}° tentativa`);
             dados.datasets[0].data.push(registro.nota);
         }
 
@@ -174,7 +176,6 @@
             config
         );
 
-        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
     }
 
 </script>
