@@ -3,11 +3,11 @@ var router = express.Router();
 
 var dadosController = require("../controllers/dadosController");
 
-router.get("/buscar", function (req, res) {
+router.get(`/buscar/:idUsuario`, function (req, res) {
     dadosController.buscar(req, res);
 });
 
-router.get("/atualizar", function (req, res) {
+router.get(`/atualizar/:idUsuario`, function (req, res) {
     dadosController.atualizar(req, res);
 })
 

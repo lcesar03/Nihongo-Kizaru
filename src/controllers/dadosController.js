@@ -2,9 +2,10 @@ var dadosModel = require("../models/dadosModel");
 
 function buscar(req, res) {
     var limite = 7;
+    var idUsuario = req.params.idUsuario;
     console.log(`Recuperando os últimos ${limite} dados`);
 
-    dadosModel.buscar(limite)
+    dadosModel.buscar(idUsuario, limite)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -21,9 +22,10 @@ function buscar(req, res) {
 
 function atualizar(req, res) {
 
+    var idUsuario = req.params.idUsuario;
     console.log(`Recuperando dados em tempo real`);
 
-    dadosModel.atualizar()
+    dadosModel.atualizar(idUsuario, limite)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -35,7 +37,7 @@ function atualizar(req, res) {
             console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         }
-    );
+        );
 }
 
 module.exports = {

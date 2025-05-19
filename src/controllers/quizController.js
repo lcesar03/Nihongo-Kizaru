@@ -15,11 +15,12 @@ function cadastrar(req, res) {
 }
 
 function atualizar(req, res) {
+    var nota = req.body.notaServer;
     var pctAcertos = req.body.pctAcertosServer;
     var pctErros = req.body.pctErrosServer;
     var idTentativa = req.body.idTentativaServer;
 
-    quizModel.atualizar(pctAcertos, pctErros, idTentativa)
+    quizModel.atualizar(nota, pctAcertos, pctErros, idTentativa)
         .then(function (resposta) {
             res.json(resposta)
             res.status(200).send("Tentativa atualizada com sucesso");

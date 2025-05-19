@@ -22,6 +22,7 @@ idTentativa INT auto_increment,
 fkUsuario INT NOT NULL,
 fkQuiz INT NOT NULL,
 	CONSTRAINT pkComposta PRIMARY KEY (idTentativa, fkUsuario, fkQuiz),
+nota DECIMAL(3,1),
 pctAcertos VARCHAR(15),
 pctErros VARCHAR(15),
 dtHoraInicio DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -33,3 +34,5 @@ dtHoraFim DATETIME DEFAULT CURRENT_TIMESTAMP,
 INSERT INTO quiz VALUES
 (default, 'Hiragana', 'Questionário sobre o alfabeto hiragana', 10),
 (default, 'Katakana', 'Questionário sobre o alfabeto katakana', 10);
+
+SELECT * FROM tentativas;

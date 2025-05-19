@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/styledashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body onload="obterDadosGrafico()">
 
     <div class="header">
         <div class="container1">
@@ -65,6 +66,9 @@
                         <h1>4</h1>
                     </div>
                 </div>
+                <div class="grafico">
+                    <div id="graficoNota"></div>
+                </div>
             </div>
             <div class="box4">
                 <div class="KPI">
@@ -76,6 +80,9 @@
                         <h6>Quiz com menor dificuldade:</h6>
                         <h2>Katakana</h2>
                     </div>
+                </div>
+                <div class="grafico">
+                    <div id="graficoPizza"></div>
                 </div>
             </div>
         </div>
@@ -90,28 +97,84 @@
 <script>validarSessao2()</script>
 <script>
 
-    function obterDadosGrafico() {
+    var atualizacao = 0
+    var idUsuario = sessionStorage.ID_USUARIO
+
+    function obterDadosGrafico(idUsuario) {
+        idUsuario = sessionStorage.ID_USUARIO
 
         if (atualizacao != undefined) {
             clearTimeout(atualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
+        fetch(`/dados/buscar/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
 
-                    plotarGrafico(resposta, idAquario);
+                        plotarGrafico(resposta, idUsuario);
 
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             }
-        })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
+        );
+        
+    }
+
+    function plotarGrafico(resposta, idUsuario) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        var labels = [];
+
+        var dados = {
+
+            labels: labels,
+            datasets: [{
+                label: 'Nota',
+                data: [],
+                fill: false,
+                borderColor: '#880000',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.nota);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        var myChart = new Chart(
+            document.getElementById(`graficoNota`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
     }
 
 </script>

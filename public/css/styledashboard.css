@@ -163,14 +163,14 @@ a:hover {
    height: 70px;
 }
 
-.moldura {
+.box3 .moldura {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    color: white;
-   width: 32%;
-   height: 100%;
+   width: 20%;
+   height: 130%;
    background-color: #410101;
    border-radius: 10px;
    font-family: minamoto;
@@ -203,8 +203,26 @@ a:hover {
    display: flex;
    width: 49%;
    height:98%;
+   align-items: center;
+   flex-direction: column;
 }
 
 .box4 .moldura {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   width: 32%;
+   height: 100%;
+   background-color: #410101;
+   border-radius: 10px;
+   font-family: minamoto;
    margin-top: 75px;
+}
+
+.grafico {
+   display: flex;
+   width: 100%;
+   height: 100%;
 }

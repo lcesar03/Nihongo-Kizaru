@@ -88,6 +88,7 @@ var lista_alternativas = []
 var pctAcertos = 0
 var pctErros = 0
 var idTentativa = 0
+var nota = 0
 
 function esconder() {
     document.getElementById('questionario').style.display = "none"
@@ -232,6 +233,7 @@ function finalizar() {
         var erros = Number(100 - acertos)
         pctAcertos = `${acertos}%`
         pctErros = `${erros}%`
+        nota = (acertos/10).toFixed(1)
 
         fetch("/quiz/atualizar", {
             method: "POST",
@@ -239,6 +241,7 @@ function finalizar() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                notaServer: nota,
                 pctAcertosServer: pctAcertos,
                 pctErrosServer: pctErros,
                 idTentativaServer: idTentativa

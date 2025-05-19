@@ -1,16 +1,16 @@
 var database = require("../database/config");
 
-function buscar(limite) {
+function buscar(idUsuario, limite) {
 
-    var instrucaoSql = `SELECT WHERE fk_aquario = ${idAquario} ORDER BY id DESC LIMIT ${limite}`;
+    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' ORDER BY idTentativa DESC LIMIT ${limite}`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function atualizar() {
+function atualizar(idUsuario) {
 
-    var instrucaoSql = `SELECT  WHERE fk_aquario = ${idAquario} ORDER BY id DESC LIMIT 1`;
+    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' ORDER BY idTentativa DESC LIMIT 1`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

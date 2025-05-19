@@ -8,9 +8,9 @@ function cadastrar(fkUsuario, fkQuiz) {
     return database.executar(instrucao);
 }
 
-function atualizar(pctAcertos, pctErros, idTentativa) {
+function atualizar(nota, pctAcertos, pctErros, idTentativa) {
     var instrucao = `
-        UPDATE tentativas SET pctAcertos = '${pctAcertos}', pctErros = '${pctErros}', dtHoraFim = default WHERE idTentativa = '${idTentativa}';
+        UPDATE tentativas SET nota = '${nota}' , pctAcertos = '${pctAcertos}', pctErros = '${pctErros}', dtHoraFim = default WHERE idTentativa = '${idTentativa}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
