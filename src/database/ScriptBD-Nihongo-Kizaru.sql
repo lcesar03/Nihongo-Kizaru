@@ -35,4 +35,15 @@ INSERT INTO quiz VALUES
 (default, 'Hiragana', 'Questionário sobre o alfabeto hiragana', 10),
 (default, 'Katakana', 'Questionário sobre o alfabeto katakana', 10);
 
+INSERT INTO tentativas VALUES
+(default, 1, 100, 3.0, '30%', '70%', default, default),
+(default, 1, 100, 7.0, '70%', '30%', default, default),
+(default, 1, 101, 5.0, '50%', '50%', default, default),
+(default, 1, 101, 6.0, '60%', '40%', default, default),
+(default, 1, 100, 6.0, '60%', '40%', default, default),
+(default, 1, 100, 8.0, '80%', '20%', default, default),
+(default, 1, 101, 6.0, '60%', '40%', default, default),
+(default, 1, 101, 9.0, '90%', '10%', default, default),
+(default, 1, 100, 8.0, '80%', '20%', default, default);
+
 SELECT * FROM tentativas;

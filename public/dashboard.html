@@ -47,7 +47,7 @@
         <div class="box2">
             <div class="box3">
                 <h3>Selecione um Quiz:</h3>
-                <select id="select_quiz">
+                <select id="select_quiz" onclick="obterDadosGrafico()">
                     <option value="geral">Geral</option>
                     <option value="hiragana">Hiragana</option>
                     <option value="katakana">Katakana</option>
@@ -59,14 +59,14 @@
                 <div class="KPI">
                     <div class="moldura">
                         <h6>Maior Nota:</h6>
-                        <h1>7</h1>
+                        <h1 id="maiorNota"></h1>
                     </div>
                     <div class="moldura">
                         <h6>Menor Nota:</h6>
-                        <h1>4</h1>
+                        <h1 id="menorNota"></h1>
                     </div>
                 </div>
-                <div class="grafico">
+                <div class="grafico" id="graficoPai">
                     <canvas id="graficoNota"></canvas>
                 </div>
             </div>
@@ -74,15 +74,18 @@
                 <div class="KPI">
                     <div class="moldura">
                         <h6>Quiz com maior dificuldade:</h6>
-                        <h2>Hiragana</h2>
+                        <h2 id="quizDificil"></h2>
                     </div>
                     <div class="moldura">
                         <h6>Quiz com menor dificuldade:</h6>
-                        <h2>Katakana</h2>
+                        <h2 id="quizFacil"></h2>
                     </div>
                 </div>
-                <div class="grafico">
-                    <div id="graficoPizza"></div>
+                <div class="grafico2">
+                    <h3>Taxa Média de Acertos</h3>
+                    <div class="containerPizza">
+                        <canvas id="graficoPizza"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,87 +98,4 @@
 
 <script src="./js/sessão.js"></script>
 <script>validarSessao2()</script>
-<script>
-
-    var atualizacao = 0
-    var idUsuario = sessionStorage.ID_USUARIO
-
-    function obterDadosGrafico(idUsuario) {
-        idUsuario = sessionStorage.ID_USUARIO
-
-        if (atualizacao != undefined) {
-            clearTimeout(atualizacao);
-        }
-
-        fetch(`/dados/buscar/${idUsuario}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-
-                        plotarGrafico(resposta, idUsuario);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            }
-        );
-        
-    }
-
-    function plotarGrafico(resposta, idUsuario) {
-        console.log(resposta)
-        console.log(idUsuario)
-
-        console.log('iniciando plotagem do gráfico...');
-
-        var labels = [];
-
-        var dados = {
-
-            labels: labels,
-            datasets: [{
-                label: 'Nota',
-                data: [],
-                fill: false,
-                borderColor: '#880000',
-                tension: 0.1
-            }]
-        };
-
-        console.log('----------------------------------------------')
-        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
-        console.log(resposta)
-
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            labels.push(`${i+1}° tentativa`);
-            dados.datasets[0].data.push(registro.nota);
-        }
-
-        console.log('----------------------------------------------')
-        console.log('O gráfico será plotado com os respectivos valores:')
-        console.log('Labels:')
-        console.log(labels)
-        console.log('Dados:')
-        console.log(dados.datasets)
-        console.log('----------------------------------------------')
-
-        const config = {
-            type: 'line',
-            data: dados,
-        };
-
-        var myChart = new Chart(
-            document.getElementById(`graficoNota`),
-            config
-        );
-
-    }
-
-</script>
+<script src="./js/dashboard.js"></script>

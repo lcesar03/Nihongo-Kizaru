@@ -1,11 +1,10 @@
 var dadosModel = require("../models/dadosModel");
 
-function buscar(req, res) {
-    var limite = 7;
+function buscarPizza(req, res) {
     var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos ${limite} dados`);
+    console.log(`Recuperando os últimos dados`);
 
-    dadosModel.buscar(idUsuario, limite)
+    dadosModel.buscarPizza(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -20,12 +19,125 @@ function buscar(req, res) {
         );
 }
 
-function atualizar(req, res) {
-
+function buscar(req, res) {
     var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando dados em tempo real`);
+    console.log(`Recuperando os últimos dados`);
 
-    dadosModel.atualizar(idUsuario, limite)
+    dadosModel.buscar(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function buscarHiragana(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.buscarHiragana(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function buscarKatakana(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.buscarKatakana(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function exibirKPI(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.exibirKPI(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function exibirKPI2(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.exibirKPI2(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function exibirKPIHiragana(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.exibirKPIHiragana(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
+function exibirKPIKatakana(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.exibirKPIKatakana(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -41,6 +153,12 @@ function atualizar(req, res) {
 }
 
 module.exports = {
+    buscarPizza,
     buscar,
-    atualizar
+    buscarHiragana,
+    buscarKatakana,
+    exibirKPI,
+    exibirKPI2,
+    exibirKPIHiragana,
+    exibirKPIKatakana
 }
