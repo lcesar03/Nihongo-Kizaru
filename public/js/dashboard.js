@@ -71,6 +71,28 @@ function obterDadosGrafico(idUsuario) {
             }
             );
 
+    } else if (quiz == 'kanji') {
+
+        document.getElementById('graficoNota').remove();
+        document.getElementById('graficoPai').innerHTML = '<h3>Histórico de Notas por Tentativa</h3> <canvas id="graficoNota"></canvas>';
+
+        fetch(`/dados/buscarKanji/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        plotarGrafico(resposta, idUsuario);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            }
+            );
+
     }
 
     fetch(`/dados/buscarPizza/${idUsuario}`, { cache: 'no-store' })
@@ -253,6 +275,27 @@ function exibirKPI() {
     } else if (quiz == 'katakana') {
 
         fetch(`/dados/exibirKPIKatakana/${idUsuario}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        document.getElementById('maiorNota').innerHTML = resposta[0]["MAX(nota)"]
+                        document.getElementById('menorNota').innerHTML = resposta[0]["MIN(nota)"]
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            }
+            );
+
+    } else if (quiz == 'kanji') {
+
+        fetch(`/dados/exibirKPIKanji/${idUsuario}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {

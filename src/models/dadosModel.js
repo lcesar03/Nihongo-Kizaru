@@ -32,6 +32,14 @@ function buscarKatakana(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarKanji(idUsuario) {
+
+    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 102`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function exibirKPI(idUsuario) {
 
     var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}'`;
@@ -65,13 +73,23 @@ function exibirKPIKatakana(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function exibirKPIKanji(idUsuario) {
+
+    var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 102`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarPizza,
     buscar,
     buscarHiragana,
     buscarKatakana,
+    buscarKanji,
     exibirKPI,
     exibirKPI2,
     exibirKPIHiragana,
-    exibirKPIKatakana
+    exibirKPIKatakana,
+    exibirKPIKanji
 }

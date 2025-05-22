@@ -19,6 +19,10 @@ router.get(`/buscarKatakana/:idUsuario`, function (req, res) {
     dadosController.buscarKatakana(req, res);
 });
 
+router.get(`/buscarKanji/:idUsuario`, function (req, res) {
+    dadosController.buscarKanji(req, res);
+});
+
 router.get(`/exibirKPI/:idUsuario`, function (req, res) {
     dadosController.exibirKPI(req, res);
 });
@@ -33,6 +37,10 @@ router.get(`/exibirKPIHiragana/:idUsuario`, function (req, res) {
 
 router.get(`/exibirKPIKatakana/:idUsuario`, function (req, res) {
     dadosController.exibirKPIKatakana(req, res);
+});
+
+router.get(`/exibirKPIKanji/:idUsuario`, function (req, res) {
+    dadosController.exibirKPIKanji(req, res);
 });
 
 module.exports = router;

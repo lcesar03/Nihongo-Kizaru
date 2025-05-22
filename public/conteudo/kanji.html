@@ -1,13 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanji</title>
+    <link rel="stylesheet" href="../css/kanji.css">
 </head>
+
 <body>
-    
+
+    <div class="header">
+        <div class="container1">
+            <div class="container2">
+                <div class="container3">
+                    <img class="daruma" src="../imagens/daruma.svg" alt="daruma">
+                    <img class="higanbana" src="../imagens/flor.svg" alt="flor">
+                </div>
+                <div class="container4">
+                    <span>NIHONGO KIZARU
+                        <img class="icon" src="../imagens/Kizaru.png" alt="macaco">
+                    </span>
+                </div>
+                <div class="container5">
+                    <li class="aba">
+                        <a href="../conteudo.html">Conteúdo</a>
+                    </li>
+                    <li class="aba">
+                        <a href="../dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="barra">|</li>
+                    <li class="aba">
+                        <a href="../quiz.html">Quiz</a>
+                    </li>
+                    <li class="aba">
+                        <a href="../minigames.html">MiniGames</a>
+                    </li>
+                    <img class="logout" src="../imagens/logout.png" alt="porta" onclick="limparSessao()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box1">
+        <div class="box2">
+            <img class="quadro" src="../imagens/wallpaper3.jpg" alt="quadro">
+            <div class="titulo">漢字</div>
+        </div>
+        <div class="box3">
+            <p>よー! こっちはシーザー先生.</p>
+            <p class="p1">
+                Bem-vindo a minha terceira aula! Caso você não tenha visto as lições anteriores sobre hiragana e kakana,
+                recomendo que estude sobre
+                estes dois conceitos primeiro e depois volte para cá, pois hoje vamos continuar com os estudos dos
+                alfabetos da língua japonesa!
+                Revisitando alguns conceitos, o idioma japonês possui 4 alfabetos: hiragana (ひらがな), katanaka(カタカナ),
+                kanji(漢字) e rōmaji (ローマ字).
+                O rōmaji é o alfabeto latino (ou romano), ou seja, rōmaji é o mesmo alfabeto utilizado aqui no Brasil de
+                A-Z! Em japonês o rōmaji é utilizado para
+                escrever a fonética dos ideogramas dos outros alfabetos, por isso utilizaremos o rōmaji ao longo desta
+                aula. Em japonês, a grande maioria das frases utiliza os três alfabetos principais (hiragana, katakana e
+                kanji):
+            </p>
+            <div class="box4">
+                <p class="p2">
+                    <u style="color:#880000;">私</u><u style="color:#ffd900">は</u><u>シーザー</u><u
+                        style="color:#880000;">先生</u><u style="color:#ffd900">です</u>
+                </p>
+            </div>
+            <div class="box4">
+                <p class="p3">
+                    <u class="ajuste3" style="color:#880000;">漢字</u><u style="color:#ffd900">ひらがな</u><u
+                        class="ajuste">カタカナ</u><u class="ajuste2" style="color:#880000;">漢字</u><u
+                        style="color:#ffd900">ひらがな</u>
+                </p>
+            </div>
+            <p class="p1">
+                Nesta aula focaremos apenas em kanji. O kanji é o alfabeto que possui o maior número de caracteres
+                dentro do idioma japonês
+                e é de origem chinesa. O kanji foi introduzido no Japão por volta do século 5 sendo em sua totalidade
+                mais de 4000 ideogramas,
+                embora hoje em dia os japoneses utilizam apenas 2.136 ideogramas os quais são considerados pelo
+                Ministério da Ciência e
+                Educação essenciais para o uso diário. Cada kanji representa uma ideia ou um conceito, utilizando dois
+                tipos de leitura:
+                Kun'yomi(訓読み), leitura japonesa de um kanji, e On'yomi(音読み), a leitura chinesa de um kanji. Há casos em
+                que um kanji possui apenas
+                uma das duas leituras, outros em que não apenas o kanji possui as duas leituras, mas também mais de uma
+                forma de leitura para cada tipo. Observe agora os kanjis abaixo:
+
+            </p>
+            <div class="box4">
+                <div class="box5">
+                    <h1>木</h1>
+                    <h6>Significado: árvore, madeira <br>
+                        Kun'yomi: き, こ <br>
+                        On'yomi: ボク、 モク
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>水</h1>
+                    <h6>Significado: água <br>
+                        Kun'yomi: みず <br>
+                        On'yomi: スイ
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>火</h1>
+                    <h6>Significado: fogo <br>
+                        Kun'yomi: ひ、 び、 ほ<br>
+                        On'yomi: カ
+                    </h6>
+                </div>
+            </div>
+            <div class="box4">
+                <div class="box5">
+                    <h1>日</h1>
+                    <h6>Significado: dia, Sol, Japão <br>
+                        Kun'yomi: ひ、 び、 か <br>
+                        On'yomi: ニチ、 ジツ
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>本</h1>
+                    <h6>Significado: livro, principal, origem, verdadeiro <br>
+                        Kun'yomi: もと <br>
+                        On'yomi: ホン
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>花</h1>
+                    <h6>Significado: flor <br>
+                        Kun'yomi: はな<br>
+                        On'yomi: カ、 ケ
+                    </h6>
+                </div>
+            </div>
+            <div class="box4">
+                <div class="box5">
+                    <h1>人</h1>
+                    <h6>Significado: pessoa <br>
+                        Kun'yomi: ひと、 り、 と <br>
+                        On'yomi: ジン、 ニン
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>大</h1>
+                    <h6>Significado: grande <br>
+                        Kun'yomi: おお <br>
+                        On'yomi: ダイ、 タイ
+                    </h6>
+                </div>
+                <div class="box5">
+                    <h1>小</h1>
+                    <h6>Significado: pequeno <br>
+                        Kun'yomi: ちい、 こ、 お、 さ<br>
+                        On'yomi: ショウ
+                    </h6>
+                </div>
+            </div>
+            <p class="p1">
+                Note que a grande maioria dos kanjis possui diversas opções de leitura as quais mudam de acordo com a
+                palavra, por exemplo 日本 se lê にほん(Japão) onde o kanji 日 utiliza a leitura em Kun'yomi に, enquanto o
+                kanji 本 utiliza
+                a leitura em On'yomi ほん. Algumas palavras possuem leituras específicas para os kanjis como a palavra
+                大人 que se lê おとな(adulto) onde o kanji 大 se lê お, uma variação de sua leitura em Kun'yomi おお,
+                enquanto o kanji 人 neste caso específico se lê とな. Abaixo mais algumas palavras com kanji: <br><br>
+                . 人 - ひと - pessoa <br>
+                . 日本人 - にほんじん - japonês/japonesa (nacionalidade) <br>
+                . 木 - き - árvore, madeira <br>
+                . 日 - ひ - dia, Sol <br>
+                . 火 - ひ - fogo <br>
+                . 水 - みず - água <br>
+                . 花 - はな - flor <br>
+                . 花火 - はなび - fogos de artifício <br>
+                . 本 - ほん - livro <br>
+                . 小さい - ちいさい - pequeno <br>
+                . 大きい - おおきい - grande
+            </p>
+            <p class="p1">
+                Por fim, mas não menos importante, assim como foi visto nas aulas anterioes, na cultura japonesa é
+                ensinado nas escolas a seguir uma ordem de traços e com kanji não é diferente. Observe o exemplo abaixo:
+            </p>
+            <div class="box4">
+                <div class="box6">
+                    <img class="ordem" src="../imagens/kanji.order.jpg" alt="火">
+                </div>
+            </div>
+            <p class="p1">
+                Como ilustrado acima, o kanji 火 possui 4 traços onde a bolinha vermelha indica o ponto de partida, portanto
+                iniciamos com um traço levemente curvado de curto comprimento e cujo sentido é de cima para baixo. A partir daí
+                o segundo traço tem uma leve curvatura para dentro e seu cumprimento é um pouco maior do que o traço anterior, porém
+                o sentido se mantém sendo de cima para baixo. Em terceiro um traço longo e reto na primeira metade entre os dois traços
+                anteriores que vai se curvando a medida que vai descendo até forma a base a esquerda. Por fim um traço reto e longo na diagonal
+                direita do terceiro traço que se curva levemente na ponta final. Abaixo segue um arquivo em PDF com as ordens dos traços
+                dos kanjis vistos em aula hj, te desejo bons estudos e até logo, またね!
+            </p>
+            <div class="box4">
+                <div class="fixo">
+                    <a href="../pdfs/Kanji.pdf.pdf" target="_blank">📁Kanji</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer2">
+            <h3>@2025, Luiz César de Camillo</h3>
+        </div>
+    </div>
+
 </body>
+
 </html>
 
 <script src="../js/sessão.js"></script>
