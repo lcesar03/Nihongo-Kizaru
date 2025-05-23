@@ -94,7 +94,19 @@
         var confirmacao_senha = confirmacao_senha_input.value
 
         if (nome.length < 3) {
-            erro_mensagem.innerHTML = `<b>Nome inválido!</b><br><br> Deve ter no mínimo 3 caracteres!`
+
+            erro_mensagem.innerHTML += `<b>Nome inválido!</b><br><br> Deve ter no mínimo 3 caracteres!<br><br>`
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+
+
+            setTimeout(() => {
+                erro_mensagem.innerHTML = ``
+                document.getElementById("caixa_erro").style.backgroundColor = ""
+            }, 4000)
+
+        }
+        if ((email.includes('@') && email.includes('.')) == false) {
+            erro_mensagem.innerHTML += `<b>Email inválido!</b><br><br> Deve conter @ e .<br><br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
             setTimeout(() => {
@@ -102,8 +114,9 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
-        } else if ((email.includes('@') && email.includes('.')) == false) {
-            erro_mensagem.innerHTML = `<b>Email inválido!</b><br><br> Deve conter '@' e '.'!`
+        }
+        if (telefone.length < 11) {
+            erro_mensagem.innerHTML += `<b>Telefone inválido!</b><br><br> Deve ter 11 dígitos sem ( ) nem -!<br><br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
             setTimeout(() => {
@@ -111,8 +124,11 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
-        } else if (telefone.length < 11) {
-            erro_mensagem.innerHTML = `<b>Telefone inválido!</b><br><br> Deve ter 11 dígitos sem ( ) nem -!`
+        }
+        if ((senha.length < 8) ||
+            (senha.includes('A') || senha.includes('B') || senha.includes('C') || senha.includes('D') || senha.includes('E') || senha.includes('F') || senha.includes('G') || senha.includes('H') || senha.includes('I') || senha.includes('J') || senha.includes('K') || senha.includes('L') || senha.includes('M') || senha.includes('N') || senha.includes('O') || senha.includes('P') || senha.includes('Q') || senha.includes('R') || senha.includes('S') || senha.includes('T') || senha.includes('U') || senha.includes('V') || senha.includes('W') || senha.includes('X') || senha.includes('Y') || senha.includes('Z')) == false ||
+            (senha.includes('.') || senha.includes('-') || senha.includes('_') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('*') || senha.includes('!') || senha.includes('?') || senha.includes(',') || senha.includes(';') || senha.includes(':')) == false) {
+            erro_mensagem.innerHTML += `<b>Senha inválida!</b><br><br> Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial!<br><br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
             setTimeout(() => {
@@ -120,39 +136,9 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
-        } else if (senha.length < 8) {
-            erro_mensagem.innerHTML = `<b>Senha inválida!</b><br> Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial!`
-            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
-
-            setTimeout(() => {
-                erro_mensagem.innerHTML = ``
-                document.getElementById("caixa_erro").style.backgroundColor = ""
-            }, 4000)
-
-        } else if (
-            (senha.includes('A') || senha.includes('B') || senha.includes('C') || senha.includes('D') || senha.includes('E') || senha.includes('F') || senha.includes('G') || senha.includes('H') || senha.includes('I') || senha.includes('J') || senha.includes('K') || senha.includes('L') || senha.includes('M') || senha.includes('N') || senha.includes('O') || senha.includes('P') || senha.includes('Q') || senha.includes('R') || senha.includes('S') || senha.includes('T') || senha.includes('U') || senha.includes('V') || senha.includes('W') || senha.includes('X') || senha.includes('Y') || senha.includes('Z')) == false
-        ) {
-            erro_mensagem.innerHTML = `<b>Senha inválida!</b><br> Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial!`
-            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
-
-            setTimeout(() => {
-                erro_mensagem.innerHTML = ``
-                document.getElementById("caixa_erro").style.backgroundColor = ""
-            }, 4000)
-
-        } else if (
-            (senha.includes('.') || senha.includes('-') || senha.includes('_') || senha.includes('@') || senha.includes('#') || senha.includes('$') || senha.includes('%') || senha.includes('&') || senha.includes('*') || senha.includes('!') || senha.includes('?') || senha.includes(',') || senha.includes(';') || senha.includes(':')) == false
-        ) {
-            erro_mensagem.innerHTML = `<b>Senha inválida!</b><br> Deve ter no mínimo 8 caracteres sendo 1 caractere maiúsculo e 1 caractere especial!`
-            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
-
-            setTimeout(() => {
-                erro_mensagem.innerHTML = ``
-                document.getElementById("caixa_erro").style.backgroundColor = ""
-            }, 4000)
-
-        } else if (confirmacao_senha != senha) {
-            erro_mensagem.innerHTML = `<b>Confirmação inválida!</b><br><br> As senhas devem ser iguais!`
+        }
+        if (confirmacao_senha != senha) {
+            erro_mensagem.innerHTML += `<b>Confirmação inválida!</b><br><br> As senhas devem ser iguais!<br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
             setTimeout(() => {
