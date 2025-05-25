@@ -10,7 +10,7 @@ function obterDadosGrafico(idUsuario) {
         document.getElementById('graficoNota').remove();
         document.getElementById('graficoPai').innerHTML = '<h3>Histórico de Notas por Tentativa</h3> <canvas id="graficoNota"></canvas>';
 
-        fetch(`/dados/buscar/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/dados/buscarGeral/${idUsuario}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -27,56 +27,12 @@ function obterDadosGrafico(idUsuario) {
             }
             );
 
-    } else if (quiz == 'hiragana') {
+    } else {
 
         document.getElementById('graficoNota').remove();
         document.getElementById('graficoPai').innerHTML = '<h3>Histórico de Notas por Tentativa</h3> <canvas id="graficoNota"></canvas>';
 
-        fetch(`/dados/buscarHiragana/${idUsuario}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        plotarGrafico(resposta, idUsuario);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            }
-            );
-
-    } else if (quiz == 'katakana') {
-
-        document.getElementById('graficoNota').remove();
-        document.getElementById('graficoPai').innerHTML = '<h3>Histórico de Notas por Tentativa</h3> <canvas id="graficoNota"></canvas>';
-
-        fetch(`/dados/buscarKatakana/${idUsuario}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        plotarGrafico(resposta, idUsuario);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            }
-            );
-
-    } else if (quiz == 'kanji') {
-
-        document.getElementById('graficoNota').remove();
-        document.getElementById('graficoPai').innerHTML = '<h3>Histórico de Notas por Tentativa</h3> <canvas id="graficoNota"></canvas>';
-
-        fetch(`/dados/buscarKanji/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/dados/buscar/${idUsuario}/${quiz}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -113,7 +69,6 @@ function obterDadosGrafico(idUsuario) {
         );
 
     exibirKPI()
-    exibirKPI2()
 
 }
 
@@ -214,6 +169,8 @@ function plotarGraficoPizza(resposta, idUsuario) {
 
     dados.datasets[0].data.push(pctAcertos);
     dados.datasets[0].data.push(pctErros);
+    document.getElementById('porcentagemErros').innerHTML = `${pctErros}%`
+    document.getElementById('porcentagemAcertos').innerHTML = `${pctAcertos}%`
 
     const config = {
         type: 'pie',
@@ -229,10 +186,12 @@ function plotarGraficoPizza(resposta, idUsuario) {
 function exibirKPI() {
     idUsuario = sessionStorage.ID_USUARIO
     var quiz = select_quiz.value
+    var maior = 0
+    var menor = 10
 
     if (quiz == 'geral') {
 
-        fetch(`/dados/exibirKPI/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/dados/exibirKPIGeral/${idUsuario}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -251,51 +210,9 @@ function exibirKPI() {
             }
             );
 
-    } else if (quiz == 'hiragana') {
+    } else {
 
-        fetch(`/dados/exibirKPIHiragana/${idUsuario}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        document.getElementById('maiorNota').innerHTML = resposta[0]["MAX(nota)"]
-                        document.getElementById('menorNota').innerHTML = resposta[0]["MIN(nota)"]
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            }
-            );
-
-    } else if (quiz == 'katakana') {
-
-        fetch(`/dados/exibirKPIKatakana/${idUsuario}`, { cache: 'no-store' })
-            .then(function (response) {
-                if (response.ok) {
-                    response.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        document.getElementById('maiorNota').innerHTML = resposta[0]["MAX(nota)"]
-                        document.getElementById('menorNota').innerHTML = resposta[0]["MIN(nota)"]
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            }
-            );
-
-    } else if (quiz == 'kanji') {
-
-        fetch(`/dados/exibirKPIKanji/${idUsuario}`, { cache: 'no-store' })
+        fetch(`/dados/exibirKPI/${idUsuario}/${quiz}`, { cache: 'no-store' })
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -315,13 +232,6 @@ function exibirKPI() {
             );
 
     }
-
-}
-
-function exibirKPI2() {
-    idUsuario = sessionStorage.ID_USUARIO
-    var maior = 0
-    var menor = 10
 
     fetch(`/dados/exibirKPI2/${idUsuario}`, { cache: 'no-store' })
         .then(function (response) {
@@ -388,4 +298,4 @@ function exibirKPI2() {
         }
         );
 
-}
+} 

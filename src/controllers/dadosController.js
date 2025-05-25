@@ -19,11 +19,31 @@ function buscarPizza(req, res) {
         );
 }
 
+function buscarGeral(req, res) {
+    var idUsuario = req.params.idUsuario;
+    console.log(`Recuperando os últimos dados`);
+
+    dadosModel.buscarGeral(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+        );
+}
+
 function buscar(req, res) {
     var idUsuario = req.params.idUsuario;
+    var quiz = req.params.quiz;
     console.log(`Recuperando os últimos dados`);
 
-    dadosModel.buscar(idUsuario)
+    dadosModel.buscar(idUsuario, quiz)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -38,68 +58,11 @@ function buscar(req, res) {
         );
 }
 
-function buscarHiragana(req, res) {
+function exibirKPIGeral(req, res) {
     var idUsuario = req.params.idUsuario;
     console.log(`Recuperando os últimos dados`);
 
-    dadosModel.buscarHiragana(idUsuario)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-        );
-}
-
-function buscarKatakana(req, res) {
-    var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos dados`);
-
-    dadosModel.buscarKatakana(idUsuario)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-        );
-}
-
-function buscarKanji(req, res) {
-    var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos dados`);
-
-    dadosModel.buscarKanji(idUsuario)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-        );
-}
-
-function exibirKPI(req, res) {
-    var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos dados`);
-
-    dadosModel.exibirKPI(idUsuario)
+    dadosModel.exibirKPIGeral(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -133,49 +96,12 @@ function exibirKPI2(req, res) {
         );
 }
 
-function exibirKPIHiragana(req, res) {
+function exibirKPI(req, res) {
     var idUsuario = req.params.idUsuario;
+    var quiz = req.params.quiz;
     console.log(`Recuperando os últimos dados`);
 
-    dadosModel.exibirKPIHiragana(idUsuario)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-        );
-}
-
-function exibirKPIKatakana(req, res) {
-    var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos dados`);
-
-    dadosModel.exibirKPIKatakana(idUsuario)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-            console.log("Houve um erro ao buscar os últimos dados.", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-        );
-}
-
-function exibirKPIKanji(req, res) {
-    var idUsuario = req.params.idUsuario;
-    console.log(`Recuperando os últimos dados`);
-
-    dadosModel.exibirKPIKanji(idUsuario)
+    dadosModel.exibirKPI(idUsuario, quiz)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -192,13 +118,9 @@ function exibirKPIKanji(req, res) {
 
 module.exports = {
     buscarPizza,
+    buscarGeral,
     buscar,
-    buscarHiragana,
-    buscarKatakana,
-    buscarKanji,
-    exibirKPI,
+    exibirKPIGeral,
     exibirKPI2,
-    exibirKPIHiragana,
-    exibirKPIKatakana,
-    exibirKPIKanji
+    exibirKPI
 }

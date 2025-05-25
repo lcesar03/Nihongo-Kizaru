@@ -202,7 +202,7 @@ a:hover {
 .box4 {
    display: flex;
    width: 49%;
-   height:98%;
+   height: 98%;
    align-items: center;
    flex-direction: column;
 }
@@ -244,6 +244,7 @@ a:hover {
 
 .grafico2 {
    display: flex;
+   position: relative;
    flex-direction: column;
    align-items: center;
    width: 100%;
@@ -255,4 +256,29 @@ a:hover {
    align-items: center;
    width: 330px;
    height: 330px;
+}
+
+#porcentagemErros {
+   display: flex;
+   position: absolute;
+   top: 90%;
+   left: 33%;
+   width: 100px;
+   height: 100px;
+   font-family: minamoto;
+   font-weight: bold;
+   font-size: 32px;
+}
+
+#porcentagemAcertos {
+   display: flex;
+   position: absolute;
+   top: 100%;
+   left: 55%;
+   width: 100px;
+   height: 100px;
+   color: white;
+   font-family: minamoto;
+   font-weight: bold;
+   font-size: 32px;
 }

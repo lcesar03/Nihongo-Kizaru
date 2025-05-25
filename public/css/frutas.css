@@ -1,0 +1,400 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #880000;
+}
+
+@font-face {
+    font-family: midorima;
+    src: url('../fontes/Midorima.ttf');
+}
+
+@font-face {
+    font-family: yoppa-fude;
+    src: url('../fontes/Yoppa-fude.ttf');
+}
+
+@font-face {
+    font-family: minamoto;
+    src: url('../fontes/Minamoto.ttf');
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    background-color: #cc0404;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    height: 100px;
+    width: 100%;
+}
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+
+.container3 {
+    height: 100px;
+    width: 210px;
+}
+
+.daruma {
+    width: 100px;
+    height: 100px;
+}
+
+.container4 {
+    height: 100px;
+    width: 210px;
+}
+
+.container4 span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: midorima;
+    font-size: 36px;
+    width: 100px;
+    height: 100px;
+    margin-left: 80px;
+}
+
+.container5 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 400px;
+    height: 80px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+.higanbana {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: #410101;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eeea1b;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aba {
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logout {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.box2 {
+    display: flex;
+    position: relative;
+    width: 99.5%;
+    height: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.quadro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: yoppa-fude;
+    font-size: 90px;
+    color: #880000;
+    border: 3px groove;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 10px;
+    border-color: #880000;
+}
+
+.box3 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-family: minamoto;
+}
+
+.box3 p {
+    margin-left: 120px;
+    text-indent: 15px;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.box3 .p1 {
+    margin-left: 120px;
+    margin-right: 120px;
+    line-height: 20px;
+    text-indent: 15px;
+    font-size: 14px;
+    text-align: justify;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.box3 .p2 {
+    margin-left: 120px;
+    margin-right: 120px;
+    line-height: 20px;
+    text-indent: 15px;
+    font-size: 14px;
+    text-align: justify;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.box3 p::first-letter {
+    font-size: 22px;
+}
+
+.box4 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.box4 a {
+    color: #0000FF;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.box4 a:hover {
+    color: #880000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.fixo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+
+.box5 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: minamoto;
+    width: 80%;
+    height: 250px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.ringo {
+    width:125%;
+    height: 100%;
+}
+
+.banana {
+    width:125%;
+    height: 85%;
+}
+
+.ichigo {
+    width:80%;
+    height: 90%;
+}
+
+.suika {
+    width:100%;
+    height: 100%;
+}
+
+.sakana {
+    width:100%;
+    height: 100%;
+}
+
+.uma {
+    width:100%;
+    height: 100%;
+}
+
+.ookami {
+    width:120%;
+    height: 120%;
+}
+
+.kitsune {
+    width:115%;
+    height: 115%;
+}
+
+.panda {
+    width:85%;
+    height: 100%;
+}
+
+.kuma {
+    width:100%;
+    height: 100%;
+}
+
+.kame {
+    width:110%;
+    height: 110%;
+}
+
+.niwatori {
+    width:77%;
+    height: 100%;
+}
+
+.shika {
+    width:100%;
+    height: 120%;
+}
+
+.saru {
+    width:80%;
+    height: 120%;
+}
+
+.kaeru {
+    width:80%;
+    height: 120%;
+}
+
+.vermelho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff1c1c;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.azul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #36A0D3;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.verde {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #004900;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.amarelo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddb501;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.roxo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8501dd;
+    width: 160px;
+    border-radius: 50%;
+}
+
+.laranja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff9100;
+    width: 160px;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.marrom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aa4400;
+    width: 160px;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.cinza {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8f8e8e;
+    width: 160px;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.box5 h6 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 26px;
+}
+
+.footer {
+    display: flex;
+    background-color: #cc0404;
+    justify-content: center;
+    width: 100%;
+    line-height: 1px;
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 10px;
+}

@@ -8,7 +8,7 @@ function buscarPizza(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-function buscar(idUsuario) {
+function buscarGeral(idUsuario) {
 
     var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}'`;
 
@@ -16,31 +16,16 @@ function buscar(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-function buscarHiragana(idUsuario) {
+function buscar(idUsuario, quiz) {
 
-    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 100`;
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function buscarKatakana(idUsuario) {
-
-    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 101`;
+    var instrucaoSql = `SELECT t.nota FROM tentativas AS t JOIN quiz AS q ON t.fkQuiz = q.idQuiz
+    WHERE t.fkUsuario = '${idUsuario}' AND q.nome = '${quiz}'`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function buscarKanji(idUsuario) {
-
-    var instrucaoSql = `SELECT nota FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 102`;
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function exibirKPI(idUsuario) {
+function exibirKPIGeral(idUsuario) {
 
     var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}'`;
 
@@ -57,25 +42,10 @@ function exibirKPI2(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-function exibirKPIHiragana(idUsuario) {
+function exibirKPI(idUsuario, quiz) {
 
-    var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 100`;
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function exibirKPIKatakana(idUsuario) {
-
-    var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 101`;
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function exibirKPIKanji(idUsuario) {
-
-    var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas WHERE fkUsuario = '${idUsuario}' AND fkQuiz = 102`;
+    var instrucaoSql = `SELECT MAX(nota), MIN(nota) FROM tentativas AS t JOIN quiz AS q ON t.fkQuiz = q.idQuiz
+    WHERE t.fkUsuario = '${idUsuario}' AND q.nome = '${quiz}'`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -83,13 +53,9 @@ function exibirKPIKanji(idUsuario) {
 
 module.exports = {
     buscarPizza,
+    buscarGeral,
     buscar,
-    buscarHiragana,
-    buscarKatakana,
-    buscarKanji,
-    exibirKPI,
+    exibirKPIGeral,
     exibirKPI2,
-    exibirKPIHiragana,
-    exibirKPIKatakana,
-    exibirKPIKanji
+    exibirKPI
 }

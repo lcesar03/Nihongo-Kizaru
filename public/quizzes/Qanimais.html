@@ -1,14 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Animais</title>
+    <link rel="stylesheet" href="../css/modeloQuiz.css">
 </head>
-<body>
-    
+
+<body onload="esconder()">
+
+    <div class="header">
+        <div class="container1">
+            <div class="container2">
+                <div class="container3">
+                    <img class="daruma" src="../imagens/daruma.svg" alt="daruma">
+                    <img class="higanbana" src="../imagens/flor.svg" alt="flor">
+                </div>
+                <div class="container4">
+                    <span>NIHONGO KIZARU
+                        <img class="icon" src="../imagens/Kizaru.png" alt="macaco">
+                    </span>
+                </div>
+                <div class="container5">
+                    <li class="aba">
+                        <a href="../conteudo.html">Conteúdo</a>
+                    </li>
+                    <li class="aba">
+                        <a href="../dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="barra">|</li>
+                    <li class="aba">
+                        <a href="../quiz.html">Quiz</a>
+                    </li>
+                    <li class="aba">
+                        <a href="../minigames.html">MiniGames</a>
+                    </li>
+                    <img class="logout" src="../imagens/logout.png" alt="porta" onclick="limparSessao()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box1">
+        <div class="box2">
+            <img class="quadro" src="../imagens/wallpaper3.jpg" alt="quadro">
+            <div class="titulo">動物のクイズ</div>
+        </div>
+        <div class="box3">
+            <div class="box4">
+                <h1>試験</h1>
+            </div>
+            <div class="box5">
+                <div id="textoInicial" class="textoIniFin">
+                    <p>Quantidade de perguntas(問題の数): 12</p>
+                    <span>よー! こっちはシーザー先生. <br>
+                        Chegou a hora de testar seus conhecimentos em animais! Clique no botão abaixo e
+                        vamos começar! 頑張ろう!
+                    </span>
+                    <button id="botaoIniciar" onclick="iniciar()">始めよう</button>
+                </div>
+                <div id="textoFinal" class="textoIniFin">
+                    <p>Quantidade de acertos(正解の数): <span id="spanPontos"></span></p>
+                    <span id="spanResultado"></span>
+                    <button onclick="voltar()" id="botaoVol">voltar</button>
+                </div>
+                <div id="questionario">
+                    <div id="caixa_erro" class="erro">
+                        <div id="erro_mensagem"></div>
+                    </div>
+                    <div class="box6">
+                        <span id="questao_atual"></span>
+                    </div>
+                    <div id="alternativas">
+                        <span>
+                            <input type="radio" id="escolhaA" name="escolha" />
+                            <label for="escolhaA" id="labelA" name="valor"></label>
+                        </span>
+                        <span>
+                            <input type="radio" id="escolhaB" name="escolha" />
+                            <label for="escolhaB" id="labelB" name="valor"></label>
+                        </span>
+                        <span>
+                            <input type="radio" id="escolhaC" name="escolha" />
+                            <label for="escolhaC" id="labelC" name="valor"></label>
+                        </span>
+                        <span>
+                            <input type="radio" id="escolhaD" name="escolha" />
+                            <label for="escolhaD" id="labelD" name="valor"></label>
+                        </span>
+                    </div>
+                    <div class="box7">
+                        <button onclick="avançar()" id="botaoAva">página seguinte</button>
+                        <button onclick="finalizar()" id="botaoFin">finalizar tentativa</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box4">
+                <h1>試験</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer2">
+            <h3>@2025, Luiz César de Camillo</h3>
+        </div>
+    </div>
+
 </body>
+
 </html>
 
 <script src="../js/sessão.js"></script>
+<script src="../js/animaisQuiz.js"></script>
 <script>validarSessao()</script>

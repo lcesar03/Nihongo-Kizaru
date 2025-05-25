@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div id="caixa_erro" class="erro">
-                    <div id="erro_mensagem"></div>
+                    <div id="erro_mensagem" class="erroMensagem"></div>
                 </div>
             </div>
         </div>
@@ -92,18 +92,19 @@
         var telefone = telefone_input.value
         var senha = senha_input.value
         var confirmacao_senha = confirmacao_senha_input.value
+        var contador = 0
 
         if (nome.length < 3) {
 
             erro_mensagem.innerHTML += `<b>Nome inválido!</b><br><br> Deve ter no mínimo 3 caracteres!<br><br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
-
             setTimeout(() => {
                 erro_mensagem.innerHTML = ``
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
+            contador++
         }
         if ((email.includes('@') && email.includes('.')) == false) {
             erro_mensagem.innerHTML += `<b>Email inválido!</b><br><br> Deve conter @ e .<br><br>`
@@ -114,16 +115,18 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
+            contador++
         }
         if (telefone.length < 11) {
             erro_mensagem.innerHTML += `<b>Telefone inválido!</b><br><br> Deve ter 11 dígitos sem ( ) nem -!<br><br>`
             document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
             setTimeout(() => {
-                erro_mensagem.innerHTML = ``
+                erro_mensagem.innerHTML= ``
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
+            contador++
         }
         if ((senha.length < 8) ||
             (senha.includes('A') || senha.includes('B') || senha.includes('C') || senha.includes('D') || senha.includes('E') || senha.includes('F') || senha.includes('G') || senha.includes('H') || senha.includes('I') || senha.includes('J') || senha.includes('K') || senha.includes('L') || senha.includes('M') || senha.includes('N') || senha.includes('O') || senha.includes('P') || senha.includes('Q') || senha.includes('R') || senha.includes('S') || senha.includes('T') || senha.includes('U') || senha.includes('V') || senha.includes('W') || senha.includes('X') || senha.includes('Y') || senha.includes('Z')) == false ||
@@ -136,6 +139,7 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
+            contador++
         }
         if (confirmacao_senha != senha) {
             erro_mensagem.innerHTML += `<b>Confirmação inválida!</b><br><br> As senhas devem ser iguais!<br>`
@@ -146,7 +150,9 @@
                 document.getElementById("caixa_erro").style.backgroundColor = ""
             }, 4000)
 
-        } else {
+            contador++
+        }
+        if(contador == 0) {
 
             fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -166,6 +172,7 @@
                     if (resposta.ok) {
 
                         erro_mensagem.innerHTML = `<b>AUTORIZADO!</b><br><br> Cadastro efetuado com sucesso!`
+                        document.getElementById('caixa_erro').setAttribute("style","height:80px")
                         document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
 
                         setTimeout(() => {
@@ -181,6 +188,27 @@
                 })
 
         }
+        if(contador == 1) {
+            document.getElementById('caixa_erro').setAttribute("style","height:80px")
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+        }
+        if(contador == 2) {
+            document.getElementById('caixa_erro').setAttribute("style","height:150px")
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+        }
+        if(contador == 3) {
+            document.getElementById('caixa_erro').setAttribute("style","height:200px")
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+        }
+        if(contador == 4){
+            document.getElementById('caixa_erro').setAttribute("style","height:270px")
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+        }
+        if(contador == 5) {
+            document.getElementById('caixa_erro').setAttribute("style","height:320px")
+            document.getElementById("caixa_erro").style.backgroundColor = "rgb(39, 39, 39)"
+        }
+        
     }
 
 </script>
