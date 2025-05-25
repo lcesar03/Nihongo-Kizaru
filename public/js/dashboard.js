@@ -240,7 +240,7 @@ function exibirKPI() {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                     for (var i = 0; i < resposta.length; i++) {
-                        var resposta_atual = resposta[i]['ROUND(AVG(nota), 1)']
+                        var resposta_atual = Number(resposta[i]['ROUND(AVG(nota), 1)'])
 
                         if (resposta_atual > maior) {
                             maior = resposta_atual
@@ -253,9 +253,10 @@ function exibirKPI() {
 
                     if (maior < 6) {
                         document.getElementById('quizFacil').innerHTML = 'Nenhum'
-                    } else {
+                    } 
+                    if(maior >= 6) {
                         for (var i2 = 0; i2 < resposta.length; i2++) {
-                            var resposta_atual = resposta[i2]['ROUND(AVG(nota), 1)']
+                            var resposta_atual = Number(resposta[i2]['ROUND(AVG(nota), 1)'])
 
                             if (resposta_atual == maior) {
                                 maior = resposta[i2]['nome']
@@ -265,27 +266,16 @@ function exibirKPI() {
                     }
                     if (menor > 6) {
                         document.getElementById('quizDificil').innerHTML = 'Nenhum'
-                    } else {
+                    }
+                    if (menor <= 6) {
                         for (var i2 = 0; i2 < resposta.length; i2++) {
-                            var resposta_atual = resposta[i2]['ROUND(AVG(nota), 1)']
+                            var resposta_atual = Number(resposta[i2]['ROUND(AVG(nota), 1)'])
 
                             if (resposta_atual == menor) {
                                 menor = resposta[i2]['nome']
                             }
                         }
                         document.getElementById('quizDificil').innerHTML = menor
-                    }
-
-                    for (var i2 = 0; i2 < resposta.length; i2++) {
-                        var resposta_atual = resposta[i2]['ROUND(AVG(nota), 1)']
-
-                        if (resposta_atual == maior) {
-                            maior = resposta[i2]['nome']
-                        }
-
-                        if (resposta_atual == menor) {
-                            menor = resposta[i2]['nome']
-                        }
                     }
 
                 });

@@ -39,7 +39,8 @@ INSERT INTO quiz VALUES
 (default, 'Katakana', 'Questionário sobre o alfabeto katakana', 10),
 (default, 'Kanji', 'Questionário sobre o alfabeto Kanji', 10),
 (default, 'Cores', 'Questionário sobre cores em japonês', 10),
-(default, 'Animais', 'Questionário sobre animais em japonês', 12);
+(default, 'Animais', 'Questionário sobre animais em japonês', 12),
+(default, 'Frutas', 'Questionário sobre frutas em japonês', 10);
 
 INSERT INTO tentativas VALUES
 (default, 1, 100, 3.0, '30%', '70%', default, default),
@@ -61,6 +62,10 @@ INSERT INTO tentativas VALUES
 (default, 1, 104, 4.9, '50%', '50%', default, default),
 (default, 1, 104, 6.6, '66.6%', '33.4%', default, default),
 (default, 1, 104, 6.6, '66.6%', '33.4%', default, default),
-(default, 1, 104, 8.3, '83.3%', '16.7%', default, default);
+(default, 1, 104, 8.3, '83.3%', '16.7%', default, default),
+(default, 1, 105, 6.0, '60%', '40%', default, default),
+(default, 1, 105, 8.0, '80%', '20%', default, default),
+(default, 1, 105, 8.0, '80%', '20%', default, default),
+(default, 1, 105, 10.0, '100%', '0%', default, default);
 
 SELECT * FROM tentativas;
